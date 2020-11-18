@@ -40,7 +40,7 @@ namespace Store
         }
 
 
-        // Öppnar upp så Register knappen tar en till RegisterWindow
+        // Öppnar upp så Register knappen tar en till RegisterWindow när man trycker på kanppen
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new RegisterWindow();
@@ -49,7 +49,7 @@ namespace Store
         }
     }
 
-    //Behövde skapa en class som säger åt att RegisterWindow ärver från Window. -- > Detta känns riktigt fult och behövs troligtvis lösas.
+    //Behövde skapa detta som säger åt att RegisterWindow ärver från Window. -- > Detta känns riktigt fult och behövs troligtvis lösas på ett snyggare sätt (?)
     public partial class RegisterWindow : Window
     { }
 
