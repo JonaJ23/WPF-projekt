@@ -21,5 +21,12 @@ namespace Store
         {
             InitializeComponent();
         }
+
+        private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
+        {
+            var next_window = new MainWindow();
+            next_window.Show();
+            Close();
+        }
     }
 }

@@ -75,5 +75,12 @@ namespace Store
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
+         //Ger åtkomst till användarens konto via huvudmenyn.
+        private void Account_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new UserInfo();
+            next_window.Show();
+            Close();
+        }
     }
 }
