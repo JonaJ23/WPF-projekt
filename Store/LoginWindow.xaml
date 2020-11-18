@@ -11,6 +11,6 @@
         <Label Content="Enter Your Name" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top"/>
         <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,184,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Left" Margin="350,231,0,0" VerticalAlignment="Top"/>
-        <Button Click ="Register_click" Content="Register" HorizontalAlignment="Left" Margin="400,231,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
+        <Button Click ="Register_Click" Content="Register" HorizontalAlignment="Left" Margin="400,231,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
     </Grid>
 </Window>

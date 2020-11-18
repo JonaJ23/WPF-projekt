@@ -16,6 +16,7 @@ namespace Store
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
+  
     public partial class LoginWindow : Window
     {
         public LoginWindow()
@@ -37,5 +38,23 @@ namespace Store
                 NameField.Text = "...";
             }
         }
+
+
+        // Öppnar upp så Register knappen tar en till RegisterWindow
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new RegisterWindow();
+            next_window.Show();
+            this.Close();
+        }
     }
+
+    //Behövde skapa en class som säger åt att RegisterWindow ärver från Window. -- > Detta känns riktigt fult och behövs troligtvis lösas.
+    public partial class RegisterWindow : Window
+    { }
+
+
+
+
+
 }
