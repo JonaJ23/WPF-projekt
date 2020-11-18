@@ -6,32 +6,28 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="UserInfo" Height="550" Width="800">
-    <ScrollViewer>
-        <Grid>
-            <Label Content="Hi, ExampleUser!" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-            <Label Content="Name:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label Content="Username:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label Content="E-mail:" HorizontalAlignment="Left" Margin="9,166,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <TextBlock Text="" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,109,0,0"/>
-            <TextBlock Text="" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,179,0,0"/>
-            <TextBlock Text="" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,143,0,0"/>
-            <Label Content="Downloaded film(s)" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Grid Margin="0,242,0,0">
-                <ScrollViewer/>
-                <Grid Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True"/>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                </Grid.RowDefinitions>
-            </Grid>
+    <Grid>
+        <Label Content="Hi, (ExampleUser)!" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="E-mail:" HorizontalAlignment="Left" Margin="9,166,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock Text="" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,109,0,0"/>
+        <TextBlock Text="" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,179,0,0"/>
+        <TextBlock Text="" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,143,0,0"/>
+        <Label Content="Downloaded film(s)" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid Margin="0,242,0,0">
+            <Grid Name="MovieGrid" Background="White" ShowGridLines="True"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </Window>
