@@ -12,5 +12,7 @@ namespace Store
         public static Customer User { get; set; }
         public static List<Movie> Movies { get; set; }
         public static Movie Pick { get; set; }
+
+        public static CustomerInfo customerInfo { get; set; }
     }
 }
