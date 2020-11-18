@@ -7,14 +7,13 @@
         mc:Ignorable="d"
         Title="Register" Height="450" Width="800">
     <Grid>
-        <Label Content="Register" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="315,24,0,0" FontSize="50"/>
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="230,144,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="230,186,0,0" Name="textBlockLastName" Text=" UserName:" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="230,217,0,0" Name="textBlockEmailId" Text="Email" VerticalAlignment="Top" Width="110" />
+        <Label Content="Register" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="315,41,0,0" FontSize="50"/>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="240,144,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="240,186,0,0" Name="textBlockLastName" Text=" UserName:" VerticalAlignment="Top" Width="110" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="255,217,0,0" Name="textBlockEmailId" Text="Email" VerticalAlignment="Top" Width="110" />
         <TextBox Height="24" HorizontalAlignment="Left" Margin="315,143,0,0" Name="textBoxEmail" VerticalAlignment="Top" Width="222" />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="315,186,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="222" />
-        <!--For password-->
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="315,217,0,0" Name="passwordBoxConfirm" VerticalAlignment="Top" Width="222" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="315,186,0,0" Name="UserNameBox" VerticalAlignment="Top" Width="222" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="315,217,0,0" Name="EmailBox" VerticalAlignment="Top" Width="222" />
         <Button Content="Submit" Height="22" HorizontalAlignment="Left" Margin="330,261,0,0" Name="Submit" VerticalAlignment="Top" Width="70" Click="Submit_Click" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,260,318,0" Name="button3" VerticalAlignment="Top" Width="70" Click="button3_Click" />
 
