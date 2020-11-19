@@ -7,8 +7,26 @@
         mc:Ignorable="d"
         Title="UserInfo" Height="660" Width="900">
     <Grid>
-        <Button Content="Main menu" Height="46" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Click="MainMenu_Click" Width="120"/>
-        <Label Content="Hi, ExampleUser!" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="Red" Offset="0.644"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Main menu" Height="46" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Click="MainMenu_Click" Width="120" Foreground="Black" FontWeight="Normal" FontFamily="Bauhaus 93">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFCDCDCD" Offset="0.91"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Hi, ExampleUser!" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" FontSize="50" Foreground="White" FontFamily="Doppio One">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label Content="Username:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label Content="E-mail:" HorizontalAlignment="Left" Margin="9,166,0,0" VerticalAlignment="Top" FontSize="20"/>
