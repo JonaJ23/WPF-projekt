@@ -41,10 +41,12 @@ namespace Store
         // Tar en tillbaka till LoginWindow
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-        var next_windowTwo = new LoginWindow();
-        next_windowTwo.Show();
-        this.Close();
+            var next_windowTwo = new LoginWindow();
+            next_windowTwo.Show();
+            this.Close();
         }
+        
+
     }
 }
 

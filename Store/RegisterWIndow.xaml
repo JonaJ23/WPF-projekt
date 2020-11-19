@@ -11,9 +11,9 @@
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="240,144,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="240,186,0,0" Name="textBlockLastName" Text=" UserName:" VerticalAlignment="Top" Width="110" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="240,217,0,0" Name="textBlockEmail" Text="Email" VerticalAlignment="Top" Width="110" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="315,143,0,0" Name="FirstNameBox" VerticalAlignment="Top" Width="222" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="315,185,0,0" Name="UserNameBox" VerticalAlignment="Top" Width="222" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="315,217,0,0" Name="EmailBox" VerticalAlignment="Top" Width="222" />
+        <TextBox  Name="FirstNameBox" Height="24" HorizontalAlignment="Left" Margin="315,143,0,0" VerticalAlignment="Top" Width="222" />
+        <TextBox Name="UserNameBox" Height="24" HorizontalAlignment="Left" Margin="315,185,0,0"  VerticalAlignment="Top" Width="222" />
+        <TextBox Name="EmailBox" Height="23" HorizontalAlignment="Left" Margin="315,217,0,0"  VerticalAlignment="Top" Width="222" />
         <Button Click="Submit_Click" Content="Submit" Height="22" HorizontalAlignment="Left" Margin="330,261,0,0" VerticalAlignment="Top" Width="70"/>
         <Button  Click="Cancel_Click" Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,260,318,0"  VerticalAlignment="Top" Width="70"/>
 
