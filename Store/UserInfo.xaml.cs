@@ -19,7 +19,8 @@ namespace Store
     {
         public UserInfo()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            MainLableName.Content = "Hi, ExampleUser!";
         }
 
         private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.

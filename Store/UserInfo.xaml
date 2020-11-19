@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Hi, ExampleUser!" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" FontSize="50" Foreground="White" FontFamily="Doppio One">
+        <Label Content="" Name="MainLableName" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top" FontSize="50" Foreground="White" FontFamily="Doppio One">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
