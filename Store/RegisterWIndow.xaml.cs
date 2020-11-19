@@ -22,6 +22,12 @@ namespace Store
             InitializeComponent();
         }
 
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            var next_windowTwo = new LoginWindow();
+            next_windowTwo.Show();
+            this.Close();
+        }
 
         // Register new customer
         /* TODO
@@ -29,13 +35,21 @@ namespace Store
          *  Fixa en Error om UserName används redan.
          * 
          */
-        private void Submit_Click(object sender, RoutedEventArgs e)
-        {
-        var next_window = new Window1();
-        next_window.Show();
-        this.Close();
+        /*  private void Submit_Click(object sender, RoutedEventArgs e)
+          {
+              State.User = API.GetCustomerByName(TextBlockFirstName.Text.Trim());
+              if (State.User != null)
+              {
+                  var next_window = new MainWindow();
+                  next_window.Show();
+                  this.Close();
+              }
+              else
+              {
+                  NameField.Text = "...";
+              }
+          } */
 
-        }
 
 
         // Tar en tillbaka till LoginWindow
