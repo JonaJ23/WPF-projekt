@@ -50,11 +50,5 @@ namespace Store
         } 
     }
 
-    //Behövde skapa detta som säger åt att RegisterWindow ärver från Window. -- > Detta känns riktigt fult och behövs troligtvis lösas på ett snyggare sätt (?)
-
-
-    
-
-
-
+  
 }

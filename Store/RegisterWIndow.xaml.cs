@@ -22,34 +22,53 @@ namespace Store
             InitializeComponent();
         }
 
-        private void Submit_Click(object sender, RoutedEventArgs e)
+        /*private void Submit_Click(object sender, RoutedEventArgs e)
         {
             var next_windowTwo = new LoginWindow();
             next_windowTwo.Show();
             this.Close();
         }
-
+        */
         // Register new customer
         /* TODO
          *  Fixa en try/catch om all info inte finns med.
          *  Fixa en Error om UserName används redan.
          * 
          */
-        /*  private void Submit_Click(object sender, RoutedEventArgs e)
-          {
-              State.User = API.GetCustomerByName(TextBlockFirstName.Text.Trim());
-              if (State.User != null)
-              {
-                  var next_window = new MainWindow();
-                  next_window.Show();
-                  this.Close();
-              }
-              else
-              {
-                  NameField.Text = "...";
-              }
-          } */
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            //Lägga till ny användare.
 
+            using (var ctx = new Context())
+            {  
+                if (FirstName.Text.Length == 0)             
+                {
+                    if(Email.Text.Length == 0)
+                    {
+                        if(UserName.Text.Length == 0)
+                        {
+                           State.User = API.GetCustomerByName(UserName.Text);
+                            if(State.User != null)
+                            {
+                                MessageBox.Show("Try again, you forgot something.");
+                            }        
+                        }
+                    }                 
+                }
+                 else
+                {
+                    ctx.Customers.Add(new Customer { Name = FirstName.Text, Email = Email.Text, UserName = UserName.Text });
+                    ctx.SaveChanges();
+
+                    MessageBox.Show("You've made an account.");
+                    var nextWindow = new LoginWindow();
+                    nextWindow.Show();
+                    this.Close();
+                }
+
+            }
+
+        }
 
 
         // Tar en tillbaka till LoginWindow
