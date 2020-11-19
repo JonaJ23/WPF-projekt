@@ -19,6 +19,7 @@ namespace Store
   
     public partial class LoginWindow : Window
     {
+  
         public LoginWindow()
         {
             InitializeComponent();
@@ -41,19 +42,18 @@ namespace Store
 
 
         // Öppnar upp så Register knappen tar en till RegisterWindow när man trycker på kanppen
-        private void Register_Click(object sender, RoutedEventArgs e)
+       private void Register_Click(object sender, RoutedEventArgs e)
         {
-            var next_window = new RegisterWindow();
-            next_window.Show();
+            var next_windowTwo = new Window1();
+            next_windowTwo.Show();
             this.Close();
-        }
+        } 
     }
 
     //Behövde skapa detta som säger åt att RegisterWindow ärver från Window. -- > Detta känns riktigt fult och behövs troligtvis lösas på ett snyggare sätt (?)
-    public partial class RegisterWindow : Window
-    { }
 
 
+    
 
 
 
