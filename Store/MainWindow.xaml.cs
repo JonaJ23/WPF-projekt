@@ -82,5 +82,11 @@ namespace Store
             next_window.Show();
             Close();
         }
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new LoginWindow();
+            next_window.Show();
+            Close();
+        }
     }
 }

@@ -68,5 +68,22 @@
                 </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
+        <Button Content="Log Out" HorizontalAlignment="Left" Margin="0,-74,0,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.87"/>
+                    <GradientStop Color="#FFE2E2E2" Offset="1"/>
+                    <GradientStop Color="#FFEDEDED" Offset="0.867"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
