@@ -20,6 +20,12 @@ namespace Store
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+
+
+        /*   TODO
+         * 1) Möjligtvis ändra om så vi har färre i row för få tydligare text?
+         * 2) Lägga till så vi kan köra genres
+         */
     {
         public MainWindow()
         {
@@ -37,18 +43,34 @@ namespace Store
 
                         try
                         {
+
+                            //skapar variable till movies name
+                            var text = new Label() { };
+                            text.Content = movie.Title; // Movies från databas
+                            text.FontWeight = FontWeights.UltraBold;
+                            text.FontFamily = new FontFamily("Sans-Serif");
+
+                            //Björns kod + lite extra
                             var image = new Image() { };
                             image.Cursor = Cursors.Hand;
                             image.MouseUp += Image_MouseUp;
+                            image.Cursor = Cursors.Hand; // ändrar om cursor.
+                            image.MouseUp += Image_MouseUp; 
                             image.HorizontalAlignment = HorizontalAlignment.Center;
                             image.VerticalAlignment = VerticalAlignment.Center;
                             image.Source = new BitmapImage(new Uri(movie.ImageURL));
-                            //image.Height = 120;
+                            image.Height = 100;
                             image.Margin = new Thickness(4, 4, 4, 4);
-
+                                
+                            // så det tillhör rätt grid.
+                            MovieGrid.Children.Add(text);
+                            Grid.SetRow(text, y);
+                            Grid.SetColumn(text, x);
                             MovieGrid.Children.Add(image);
                             Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);
+
+
                         }
                         catch (Exception e) when 
                             (e is ArgumentNullException || 

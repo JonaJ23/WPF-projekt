@@ -48,11 +48,12 @@
         <ScrollViewer>
             <Grid x:Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="117*" />
+                    <ColumnDefinition Width="137*" />
+                    <ColumnDefinition Width="129*" />
+                    <ColumnDefinition Width="142*"/>
+                    <ColumnDefinition Width="130*" />
+                    <ColumnDefinition Width="118*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140" />
