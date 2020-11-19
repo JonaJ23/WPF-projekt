@@ -21,23 +21,12 @@ namespace Store
         {
             InitializeComponent();
         }
-
-        /*private void Submit_Click(object sender, RoutedEventArgs e)
-        {
-            var next_windowTwo = new LoginWindow();
-            next_windowTwo.Show();
-            this.Close();
-        }
-        */
-        // Register new customer
         /* TODO
-         *  Fixa en try/catch om all info inte finns med.
          *  Fixa en Error om UserName används redan.
-         * 
          */
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            //Lägga till ny användare.
+            //Lägger till ny användare samt hänvisar tillbaka till LoginWindow. 
 
             using (var ctx = new Context())
             {  
@@ -69,17 +58,13 @@ namespace Store
             }
 
         }
-
-
-        // Tar en tillbaka till LoginWindow
+        // Hänvisar tillbaka till LoginWindow
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             var next_windowTwo = new LoginWindow();
             next_windowTwo.Show();
             this.Close();
         }
-        
-
     }
 }
 
