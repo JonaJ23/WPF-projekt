@@ -15,13 +15,14 @@ namespace Store
     /// <summary>
     /// Interaction logic for UserInfo.xaml
     /// </summary>
+    
     public partial class UserInfo : Window
     {
         public UserInfo()
         {
             InitializeComponent();            
-            MainLableName.Content = "Hi, ExampleUser!";
-        }
+            MainLableName.Content = "Hi, " + State.User.Name;   //Tillkallar info från usern genom använda State.User och sedan ta fram det jag vill ha.
+        } 
 
         private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
         {
