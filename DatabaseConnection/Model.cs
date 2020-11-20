@@ -10,6 +10,7 @@ namespace DatabaseConnection
         public string Name { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
+        public string Password { get; set; }
         public virtual List<Rental> Sales { get; set; }
     }
     public class Movie
@@ -17,6 +18,8 @@ namespace DatabaseConnection
         public int Id { get; set; }
         public string Title { get; set; }
         public string ImageURL { get; set; }
+        public string Rating { get; set; }
+        public string Genre { get; set; }
         public virtual List<Rental> Sales { get; set; }
     }
     public class Rental
