@@ -24,7 +24,7 @@ namespace Store
 
         /*   TODO
          * 1) Möjligtvis ändra om så vi har färre i row för få tydligare text?
-         * 2) Lägga till så vi kan köra genres + ratings ( ? ) 
+         * 2) Lägga till så vi kan köra genres
          */
     {
         public MainWindow()
@@ -44,14 +44,12 @@ namespace Store
                         try
                         {
 
-                            //skapar variable till movies name + lite info om utseendet.
+                            //skapar variable till movies name
                             var text = new Label() { };
                             text.Content = movie.Title; // Movies från databas
                             text.FontWeight = FontWeights.UltraBold;
                             text.FontFamily = new FontFamily("Sans-Serif");
-                            text.FontSize = 11;
 
-                           
                             //Björns kod + lite extra
                             var image = new Image() { };
                             image.Cursor = Cursors.Hand;
