@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        <Label Content="MovieHUB" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="1" FontSize="50"/>
-        <Label Content="Enter Your Name" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,184,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Left" Margin="350,231,0,0" VerticalAlignment="Top"/>
-        <Button Click ="Register_Click" Content="Register" HorizontalAlignment="Left" Margin="400,231,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
+        Title="LoginWindow" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+    <Grid RenderTransformOrigin="0.494,0.486">
+        <!--Labels-->
+        <Label Content="MovieHUB" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="50" FontFamily="Bauhaus 93"/>
+        <Label Content="Enter your username and password." HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="Don't have an account?" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0"/>
+        <!--Username-->
+        <TextBox Name="NameField" HorizontalAlignment="Center" Margin="0,164,0,0" Text="username" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <!--Password-->
+        <PasswordBox Password="*****" Name="PasswordField" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,188,0,0"/>
+        <!--Buttons-->
+        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top" Width="56"/>
+        <Button Click ="Register_Click" Content="Register" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="56" Height="20"/>
+
     </Grid>
 </Window>
