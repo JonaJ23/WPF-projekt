@@ -29,9 +29,11 @@ namespace Store
             //Lägger till ny användare samt hänvisar tillbaka till LoginWindow. 
 
             using (var ctx = new Context())
-            {  
-                if (FirstName.Text.Length == 0)             
-                {
+            { 
+                if(PasswordField.Password.Length == 0)
+                { 
+                  if (FirstName.Text.Length == 0)             
+                  {
                     if(Email.Text.Length == 0)
                     {
                         if(UserName.Text.Length == 0)
@@ -43,10 +45,11 @@ namespace Store
                             }        
                         }
                     }                 
+                  }
                 }
-                 else
+                else
                 {
-                    ctx.Customers.Add(new Customer { Name = FirstName.Text, Email = Email.Text, UserName = UserName.Text });
+                    ctx.Customers.Add(new Customer { Name = FirstName.Text, Email = Email.Text, UserName = UserName.Text, Password = PasswordField.Password});
                     ctx.SaveChanges();
 
                     MessageBox.Show("You've made an account.");
