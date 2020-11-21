@@ -56,6 +56,4 @@ namespace Store
             this.Close();
         } 
     }
-
-  
 }

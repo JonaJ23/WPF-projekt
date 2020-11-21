@@ -20,8 +20,12 @@ namespace Store
     {
         public UserInfo()
         {
-            InitializeComponent();            
-            MainLableName.Content = "Hi, " + State.User.Name;   //Tillkallar info från usern genom använda State.User och sedan ta fram det jag vill ha.
+            InitializeComponent();
+
+            //Tillkallar info från usern genom använda State.User och sedan ta fram det jag vill ha, i detta fall info om kunden i kundens info-sida.
+            MainLableName.Content = "Hi, " + State.User.Name; 
+            UserNameTextBlock.Text = State.User.UserName;
+            EmailTextBlock.Text = State.User.Email;
         } 
 
         private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
