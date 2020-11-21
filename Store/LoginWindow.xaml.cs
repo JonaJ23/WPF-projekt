@@ -30,9 +30,16 @@ namespace Store
             State.User = API.GetCustomerByName(NameField.Text.Trim());
             if (State.User != null)
             {
+                if(State.User.Password == PasswordField.Password)
+                { 
                 var next_window = new MainWindow();
                 next_window.Show();
                 this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong password, try again.");
+                }
             }
             else
             {
