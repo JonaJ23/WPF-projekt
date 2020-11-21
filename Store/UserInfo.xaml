@@ -49,5 +49,6 @@
         </Grid>
         <TextBlock Name ="UserNameTextBlock"  HorizontalAlignment="Left" Height="28" Margin="123,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="22" FontWeight="Bold"/>
         <TextBlock Name ="EmailTextBlock"  HorizontalAlignment="Left" Height="28" Margin="123,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="22" FontWeight="Bold"/>
+        <TextBlock Name ="MovieNamesBlock"  HorizontalAlignment="Left" Height="28" Margin="226,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="22" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -26,6 +26,7 @@ namespace Store
             MainLableName.Content = "Hi, " + State.User.Name; 
             UserNameTextBlock.Text = State.User.UserName;
             EmailTextBlock.Text = State.User.Email;
+            MovieNamesBlock.Text = State.Pick.Title; //Får funka för stunden, så kunden iaf kan se namnet på filmen de hyrt.
         } 
 
         private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
