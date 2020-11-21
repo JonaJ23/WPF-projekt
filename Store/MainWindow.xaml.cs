@@ -31,7 +31,7 @@ namespace Store
         {
             InitializeComponent();
 
-            State.Movies = API.GetMovieSlice(0, 50);
+            State.Movies = API.GetMovieSlice(0, 20);
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -50,6 +50,12 @@ namespace Store
                             text.FontWeight = FontWeights.UltraBold;
                             text.FontFamily = new FontFamily("Sans-Serif");
 
+                            var rating = new Label() { };
+                            rating.Content = "Rating: " + movie.Rating;
+                            rating.HorizontalAlignment = HorizontalAlignment.Center;
+                            rating.VerticalAlignment = VerticalAlignment.Bottom;
+                            rating.FontWeight = FontWeights.UltraBold;
+
                             //Björns kod + lite extra
                             var image = new Image() { };
                             image.Cursor = Cursors.Hand;
@@ -66,9 +72,13 @@ namespace Store
                             MovieGrid.Children.Add(text);
                             Grid.SetRow(text, y);
                             Grid.SetColumn(text, x);
+                            MovieGrid.Children.Add(rating);
+                            Grid.SetRow(rating, y);
+                            Grid.SetColumn(rating, x);
                             MovieGrid.Children.Add(image);
                             Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);
+
 
 
                         }
