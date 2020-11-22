@@ -51,14 +51,12 @@ namespace Store
 
                             // Rating and Genre
                             var genreRating = new Label() { };
-                            genreRating.Content = movie.Rating +"/10" + " " + movie.Genre;
+                            genreRating.Content = "(" + movie.Rating +"/10" +")" + " " + movie.Genre;
                             genreRating.HorizontalAlignment = HorizontalAlignment.Center;
                             genreRating.VerticalAlignment = VerticalAlignment.Bottom;
-                            genreRating.FontWeight = FontWeights.UltraBold;
+                            genreRating.FontWeight = FontWeights.UltraBold; 
                             genreRating.FontSize = 10;
-
-
-
+                            genreRating.FontFamily = new FontFamily("Sans-Serif");
 
                             //Björns kod + lite extra
                             var image = new Image() { };
@@ -82,7 +80,6 @@ namespace Store
                             MovieGrid.Children.Add(image);
                             Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);
-
 
 
                         }
