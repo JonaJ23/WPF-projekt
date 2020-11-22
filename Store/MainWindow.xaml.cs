@@ -23,7 +23,6 @@ namespace Store
 
 
         /*   TODO
-         * 1) Möjligtvis ändra om så vi har färre i row för få tydligare text?
          * 2) Lägga till så vi kan köra genres
          */
     {
@@ -44,17 +43,22 @@ namespace Store
                         try
                         {
 
-                            //skapar variable till movies name
+                            //Movie
                             var text = new Label() { };
                             text.Content = movie.Title; // Movies från databas
                             text.FontWeight = FontWeights.UltraBold;
                             text.FontFamily = new FontFamily("Sans-Serif");
 
-                            var rating = new Label() { };
-                            rating.Content = "Rating: " + movie.Rating;
-                            rating.HorizontalAlignment = HorizontalAlignment.Center;
-                            rating.VerticalAlignment = VerticalAlignment.Bottom;
-                            rating.FontWeight = FontWeights.UltraBold;
+                            // Rating and Genre
+                            var genreRating = new Label() { };
+                            genreRating.Content = movie.Rating +"/10" + " " + movie.Genre;
+                            genreRating.HorizontalAlignment = HorizontalAlignment.Center;
+                            genreRating.VerticalAlignment = VerticalAlignment.Bottom;
+                            genreRating.FontWeight = FontWeights.UltraBold;
+                            genreRating.FontSize = 10;
+
+
+
 
                             //Björns kod + lite extra
                             var image = new Image() { };
@@ -72,9 +76,9 @@ namespace Store
                             MovieGrid.Children.Add(text);
                             Grid.SetRow(text, y);
                             Grid.SetColumn(text, x);
-                            MovieGrid.Children.Add(rating);
-                            Grid.SetRow(rating, y);
-                            Grid.SetColumn(rating, x);
+                            MovieGrid.Children.Add(genreRating);
+                            Grid.SetRow(genreRating, y);
+                            Grid.SetColumn(genreRating, x);
                             MovieGrid.Children.Add(image);
                             Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);

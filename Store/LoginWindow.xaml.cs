@@ -36,6 +36,7 @@ namespace Store
                     next_window.Show();
                     this.Close();
                 }
+
             }
             else
             {
