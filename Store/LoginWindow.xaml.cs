@@ -28,7 +28,8 @@ namespace Store
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             State.User = API.GetCustomerByName(NameField.Text.Trim());
-            if (State.User == null)
+
+            if (State.User == null)  // Kollar av om det är tom inmatning av användarnamn/lösenord.
             {
                 if (NameField.Text.Length == 0)
                 {
@@ -43,22 +44,22 @@ namespace Store
                     MessageBox.Show("Password is required, try again.", "Missing input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
-                {
+                {   // Ger svar om användaren inte finns registrerad i Customer-tabellen.
                     NameField.Text = "...";
                     PasswordField.Password = ".....";
                     MessageBox.Show("Username not found, try again.", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             
-            else if (State.User != null)
+            else if (State.User != null) //Om användaren känns igen från Customer-tabellen.
             {
                 if (State.User.Password == PasswordField.Password)
                 {
-                    var next_window = new MainWindow();
+                    var next_window = new MainWindow(); //Går vidare till huvudmenyn om lösenordet är korrekt.
                     next_window.Show();
                     this.Close();
                 }
-                else if (State.User.Password != PasswordField.Password)
+                else if (State.User.Password != PasswordField.Password) // Ger besked om lösenordet inte stämmer.
                 {
                     NameField.Text = "...";
                     PasswordField.Password = ".....";
