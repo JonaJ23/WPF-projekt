@@ -28,7 +28,29 @@ namespace Store
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             State.User = API.GetCustomerByName(NameField.Text.Trim());
-            if (State.User != null)
+            if (State.User == null)
+            {
+                if (NameField.Text.Length == 0)
+                {
+                    NameField.Text = "...";
+                    PasswordField.Password = ".....";
+                    MessageBox.Show("Please enter a username.", "Missing input", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else if (PasswordField.Password.Length == 0)
+                {
+                    NameField.Text = "...";
+                    PasswordField.Password = ".....";
+                    MessageBox.Show("Password is required, try again.", "Missing input", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    NameField.Text = "...";
+                    PasswordField.Password = ".....";
+                    MessageBox.Show("Username not found, try again.", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            
+            else if (State.User != null)
             {
                 if (State.User.Password == PasswordField.Password)
                 {
@@ -36,13 +58,12 @@ namespace Store
                     next_window.Show();
                     this.Close();
                 }
-
-            }
-            else
-            {
-                NameField.Text = "...";
-                NameField.Text = ".....";
-                MessageBox.Show("Wrong username/password, try again.", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Information);
+                else if (State.User.Password != PasswordField.Password)
+                {
+                    NameField.Text = "...";
+                    PasswordField.Password = ".....";
+                    MessageBox.Show("Wrong password, try again.", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
 

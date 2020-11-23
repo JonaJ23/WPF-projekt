@@ -62,8 +62,8 @@ namespace Store
                             var image = new Image() { };
                             image.Cursor = Cursors.Hand;
                             image.MouseUp += Image_MouseUp;
-                            image.Cursor = Cursors.Hand; // ändrar om cursor.
-                            image.MouseUp += Image_MouseUp; 
+                            image.Cursor = Cursors.Hand; // ändrar om cursor. 
+                            //image.MouseUp += Image_MouseUp; 
                             image.HorizontalAlignment = HorizontalAlignment.Center;
                             image.VerticalAlignment = VerticalAlignment.Center;
                             image.Source = new BitmapImage(new Uri(movie.ImageURL));
