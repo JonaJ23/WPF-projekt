@@ -29,37 +29,48 @@ namespace Store
             //Lägger till ny användare samt hänvisar tillbaka till LoginWindow. 
 
             using (var ctx = new Context())
-            { 
-                if(PasswordField.Password.Length == 0)
-                { 
-                  if (FirstName.Text.Length == 0)             
-                  {
-                    if(Email.Text.Length == 0)
-                    {
-                        if(UserName.Text.Length == 0)
-                        {
-                           State.User = API.GetCustomerByName(UserName.Text);
-                            if(State.User != null)
-                            {
-                                MessageBox.Show("Try again, you forgot something.");
-                            }        
-                        }
-                    }                 
-                  }
+            {
+                if (FirstName.Text.Length == 0)
+                {          
+                    MessageBox.Show("Please enter your first name.");                    
                 }
+
+                else if (UserName.Text.Length == 0)
+                {
+                    MessageBox.Show("Please enter a username.");
+                }
+
+                else if (PasswordField.Password.Length == 0)
+                {
+                    MessageBox.Show("Please enter a password.");
+                }
+
+                else if (Email.Text.Length == 0)
+                {
+                    MessageBox.Show("Please enter an e-mailadress.");
+                }
+
                 else
                 {
-                    ctx.Customers.Add(new Customer { Name = FirstName.Text, Email = Email.Text, UserName = UserName.Text, Password = PasswordField.Password});
-                    ctx.SaveChanges();
+                    State.User = API.GetCustomerByName(Email.Text);
+                    if (State.User != null)
+                    {
+                        MessageBox.Show("Username already taken.");
+                        UserName.Clear();
+                    }
 
-                    MessageBox.Show("You've made an account.");
-                    var nextWindow = new LoginWindow();
-                    nextWindow.Show();
-                    this.Close();
+                    else
+                    {
+                        ctx.Customers.Add(new Customer { Name = FirstName.Text, UserName = UserName.Text, Password = PasswordField.Password, Email = Email.Text });
+                        ctx.SaveChanges();
+
+                        MessageBox.Show("You've made an account!");
+                        var next_window = new LoginWindow();
+                        next_window.Show();
+                        this.Close();
+                    }
                 }
-
             }
-
         }
         // Hänvisar tillbaka till LoginWindow
         private void Cancel_Click(object sender, RoutedEventArgs e)
