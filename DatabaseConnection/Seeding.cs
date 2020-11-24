@@ -18,7 +18,6 @@ namespace DatabaseConnection
 
                 ctx.AddRange(new List<Customer> {
                     new Customer { Name = "Björn", Email="ceeecce", UserName ="sasas", Password = "Björn"},
-
                 });
 
                 // Här laddas data in från SeedData foldern för att fylla ut Movies tabellen

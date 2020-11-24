@@ -59,6 +59,7 @@ namespace Store
                         UserName.Clear();
                     }
 
+
                     else
                     {
                         ctx.Customers.Add(new Customer { Name = FirstName.Text, UserName = UserName.Text, Password = PasswordField.Password, Email = Email.Text });

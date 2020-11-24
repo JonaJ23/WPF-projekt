@@ -68,13 +68,22 @@ namespace Store
             }
         }
 
-
         // Öppnar upp så Register knappen tar en till RegisterWindow när man trycker på kanppen
-       private void Register_Click(object sender, RoutedEventArgs e)
+        private void Register_Click(object sender, RoutedEventArgs e)
         {
             var next_windowTwo = new Window1();
             next_windowTwo.Show();
             this.Close();
-        } 
+        }
+        
+        private void UserNameClickRemove(object sender, MouseButtonEventArgs e)
+        {
+            NameField.Clear();
+        }
+
+        private void PasswordClickRemove(object sender, MouseButtonEventArgs e)
+        {
+            PasswordField.Clear();
+        }
     }
 }
