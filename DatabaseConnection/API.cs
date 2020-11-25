@@ -8,7 +8,6 @@ namespace DatabaseConnection
 {
     public class API
     {
-        //Tänker att jag kopierar "GetCustomerByName" men istället plockar ut film titlar bara.
         public static List<Movie> GetMovieByName(string title)
         {
             using var ctx = new Context();
