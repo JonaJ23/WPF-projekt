@@ -28,7 +28,7 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-135,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" >
+        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-135,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -68,7 +68,7 @@
                 </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
-        <Button Content="Log Out" HorizontalAlignment="Left" Margin="0,-74,0,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" >
+        <Button Content="Log Out" HorizontalAlignment="Left" Margin="0,-74,0,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
