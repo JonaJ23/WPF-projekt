@@ -20,15 +20,28 @@ namespace Store
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-
-
-        /*   TODO
-         * 2) Lägga till så vi kan köra genres
-         */
     {
+
         public MainWindow()
         {
             InitializeComponent();
+
+            this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
+
+            //  ----- > Kod till search box <---- /Fail kod, hänvisar till inlogg fönster just nu bara. 
+            void MainWindow_KeyDown(object sender, KeyEventArgs e)
+            {
+                if (e.Key == Key.Enter)
+                {
+                    State.Movies.Clear();
+                    State.Movies.AddRange(API.GetMovieByName(SearchMovieBox.Text));
+                    var next_window = new UserInfo();
+                    next_window.Show();
+                    Close();
+
+                }
+
+            }
 
             State.Movies = API.GetMovieSlice(0, 20);
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
@@ -51,10 +64,10 @@ namespace Store
 
                             // Rating and Genre
                             var genreRating = new Label() { };
-                            genreRating.Content = "(" + movie.Rating +"/10" +")" + " " + movie.Genre;
+                            genreRating.Content = "(" + movie.Rating + "/10" + ")" + " " + movie.Genre;
                             genreRating.HorizontalAlignment = HorizontalAlignment.Center;
                             genreRating.VerticalAlignment = VerticalAlignment.Bottom;
-                            genreRating.FontWeight = FontWeights.UltraBold; 
+                            genreRating.FontWeight = FontWeights.UltraBold;
                             genreRating.FontSize = 10;
                             genreRating.FontFamily = new FontFamily("Sans-Serif");
 
@@ -69,7 +82,7 @@ namespace Store
                             image.Source = new BitmapImage(new Uri(movie.ImageURL));
                             image.Height = 100;
                             image.Margin = new Thickness(4, 4, 4, 4);
-                                
+
                             // så det tillhör rätt grid.
                             MovieGrid.Children.Add(text);
                             Grid.SetRow(text, y);
@@ -83,9 +96,9 @@ namespace Store
 
 
                         }
-                        catch (Exception e) when 
-                            (e is ArgumentNullException || 
-                             e is System.IO.FileNotFoundException || 
+                        catch (Exception e) when
+                            (e is ArgumentNullException ||
+                             e is System.IO.FileNotFoundException ||
                              e is UriFormatException)
                         {
                             continue;
@@ -104,18 +117,24 @@ namespace Store
             int i = y * MovieGrid.ColumnDefinitions.Count + x;
             State.Pick = State.Movies[i];
 
-            if(API.RegisterSale(State.User, State.Pick))
+
+
+            if (API.RegisterSale(State.User, State.Pick))
                 MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
-         //Ger åtkomst till användarens konto via huvudmenyn.
+
+
+        //Ger åtkomst till användarens konto via huvudmenyn.
         private void Account_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new UserInfo();
             next_window.Show();
             Close();
         }
+
+        //Loggar ut användaren. 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();

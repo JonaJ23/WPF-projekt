@@ -8,6 +8,12 @@ namespace DatabaseConnection
 {
     public class API
     {
+        public static List<Movie> GetMovieByName(string title)
+        {
+            using var ctx = new Context();
+            return ctx.Movies.AsEnumerable().Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
         public static List<Movie> GetMovieSlice(int a, int b)
         {
             using var ctx = new Context();
