@@ -33,20 +33,20 @@ namespace Store
             {
                 if (NameField.Text.Length == 0)
                 {
-                    NameField.Text = "...";
-                    PasswordField.Password = ".....";
+                    NameField.Text = "username";
+                    PasswordField.Password = "password";
                     MessageBox.Show("Please enter a username.", "Missing input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else if (PasswordField.Password.Length == 0)
                 {
-                    NameField.Text = "...";
-                    PasswordField.Password = ".....";
+                    NameField.Text = "username";
+                    PasswordField.Password = "password";
                     MessageBox.Show("Password is required, try again.", "Missing input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {   // Ger svar om användaren inte finns registrerad i Customer-tabellen.
-                    NameField.Text = "...";
-                    PasswordField.Password = ".....";
+                    NameField.Text = "username";
+                    PasswordField.Password = "password";
                     MessageBox.Show("Username not found, try again.", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
@@ -61,8 +61,8 @@ namespace Store
                 }
                 else if (State.User.Password != PasswordField.Password) // Ger besked om lösenordet inte stämmer.
                 {
-                    NameField.Text = "...";
-                    PasswordField.Password = ".....";
+                    NameField.Text = "username";
+                    PasswordField.Password = "password";
                     MessageBox.Show("Wrong password, try again.", "Wrong input", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }

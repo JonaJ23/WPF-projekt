@@ -97,6 +97,7 @@ namespace Store
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            var ctx = new Context();
             var x = Grid.GetColumn(sender as UIElement);
             var y = Grid.GetRow(sender as UIElement);
 

@@ -12,9 +12,9 @@
         <Label Content="Enter your username and password." HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top"/>
         <Label Content="Don't have an account?" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0"/>
         <!--Username-->
-        <TextBox Name="NameField" PreviewMouseLeftButtonDown="UserNameClickRemove" HorizontalAlignment="Center" Margin="0,164,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="NameField" PreviewMouseLeftButtonDown="UserNameClickRemove" HorizontalAlignment="Center" Margin="0,164,0,0" Text="username" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <!--Password-->
-        <PasswordBox Password="*****" Name="PasswordField" PreviewMouseLeftButtonDown="PasswordClickRemove" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,188,0,0"/>
+        <PasswordBox Password="password" Name="PasswordField" PreviewMouseLeftButtonDown="PasswordClickRemove" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,188,0,0"/>
         <!--Buttons-->
         <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top" Width="56"/>
         <Button Click ="Register_Click" Content="Register" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="56" Height="20"/>
