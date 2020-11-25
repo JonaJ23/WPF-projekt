@@ -75,7 +75,8 @@ namespace Store
             next_windowTwo.Show();
             this.Close();
         }
-        
+
+        // Clear första texten i username/password
         private void UserNameClickRemove(object sender, MouseButtonEventArgs e)
         {
             NameField.Clear();
