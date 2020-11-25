@@ -21,9 +21,7 @@ namespace Store
         {
             InitializeComponent();
         }
-        /* TODO
-         *  Fixa en Error om UserName används redan.
-         */
+
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             //Lägger till ny användare samt hänvisar tillbaka till LoginWindow. 
