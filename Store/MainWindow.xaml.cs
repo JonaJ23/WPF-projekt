@@ -61,6 +61,8 @@ namespace Store
                             text.Content = movie.Title; // Movies från databas
                             text.FontWeight = FontWeights.UltraBold;
                             text.FontFamily = new FontFamily("Sans-Serif");
+                            text.HorizontalAlignment = HorizontalAlignment.Center;
+                            text.VerticalAlignment = VerticalAlignment.Top;
 
                             // Rating and Genre
                             var genreRating = new Label() { };

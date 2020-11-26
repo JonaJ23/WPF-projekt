@@ -32,8 +32,15 @@ namespace Store
             var text = new Label() { };
             text.Content = State.Pick.Title; // Titel från databasen.
             CustomerMovieGrid.Children.Add(text);
+            text.Height = 200;
+            text.FontWeight = FontWeights.UltraBold;
+            text.FontFamily = new FontFamily("Sans-Serif");
+            text.HorizontalAlignment = HorizontalAlignment.Center;
+            text.VerticalAlignment = VerticalAlignment.Top;
             Grid.SetRow(text, y);
             Grid.SetColumn(text, x);
+
+
 
             var image = new Image()
             {
@@ -46,6 +53,7 @@ namespace Store
             try
             {
                 image.Source = new BitmapImage(new Uri(State.Pick.ImageURL)); // Hämta hem bildlänken till RAM
+                image.Height = 100;
             }
             catch (Exception e) when
                 (e is ArgumentNullException ||

@@ -15,7 +15,7 @@
         </Grid.Background>
 
         <!--Moviegrid-->
-        <Grid x:Name="CustomerMovieGrid" Margin="0,258,0,0">
+        <Grid x:Name="CustomerMovieGrid" Margin="0,258,0,0" Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
@@ -51,6 +51,5 @@
         <Label Content="Downloaded film(s)" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" FontFamily="Bahnschrift" FontWeight="Normal"/>
         <TextBlock Name ="UserNameTextBlock"  HorizontalAlignment="Left" Height="28" Margin="121,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="22" FontWeight="Bold" Foreground="White" FontFamily="Bahnschrift"/>
         <TextBlock Name ="EmailTextBlock"  HorizontalAlignment="Left" Height="28" Margin="151,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="22" FontWeight="Bold" Foreground="White" FontFamily="Bahnschrift"/>
-        <TextBlock Name ="MovieNamesBlock"  HorizontalAlignment="Left" Height="28" Margin="199,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" FontSize="22" FontWeight="Bold" Foreground="White" FontFamily="Bahnschrift"/>
     </Grid>
 </Window>
