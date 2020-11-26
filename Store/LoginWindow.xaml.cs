@@ -86,5 +86,10 @@ namespace Store
         {
             PasswordField.Clear();
         }
+
+        private void NameField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

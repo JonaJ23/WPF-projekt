@@ -17,16 +17,16 @@ using DatabaseConnection;
 namespace Store
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SearchWindow : Window
     {
 
-        public MainWindow()
+        public SearchWindow()
         {
             InitializeComponent();
 
-            State.Movies = API.GetMovieSlice(0, 20);
+            
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -44,8 +44,6 @@ namespace Store
                             text.Content = movie.Title; // Movies från databas
                             text.FontWeight = FontWeights.UltraBold;
                             text.FontFamily = new FontFamily("Sans-Serif");
-                            text.HorizontalAlignment = HorizontalAlignment.Center;
-                            text.VerticalAlignment = VerticalAlignment.Top;
 
                             // Rating and Genre
                             var genreRating = new Label() { };
@@ -91,10 +89,10 @@ namespace Store
                     }
                 }
             }
+
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
-        //  ----- > Kod till search box <---- /Fail kod, hänvisar till inlogg fönster just nu bara. 
         public void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -122,6 +120,10 @@ namespace Store
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
+
+        //  ----- > Kod till search box <---- /Fail kod, hänvisar till inlogg fönster just nu bara. 
+
+
 
         //Ger åtkomst till användarens konto via huvudmenyn.
         private void Account_Click(object sender, RoutedEventArgs e)

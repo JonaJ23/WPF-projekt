@@ -12,6 +12,7 @@ namespace DatabaseConnection
         public string UserName { get; set; }
         public string Password { get; set; }
         public virtual List<Rental> Sales { get; set; }
+       
     }
     public class Movie
     {
@@ -21,6 +22,7 @@ namespace DatabaseConnection
         public string Rating { get; set; }
         public string Genre { get; set; }
         public virtual List<Rental> Sales { get; set; }
+     
     }
     public class Rental
     {
@@ -28,5 +30,6 @@ namespace DatabaseConnection
         public DateTime Date { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Movie Movie { get; set; }
+
     }
 }

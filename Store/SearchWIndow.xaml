@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
-        xmlns:DatabaseConnection="clr-namespace:DatabaseConnection;assembly=DatabaseConnection" x:Class="Store.MainWindow"
+        xmlns:DatabaseConnection="clr-namespace:DatabaseConnection;assembly=DatabaseConnection" x:Class="Store.SearchWindow"
         mc:Ignorable="d"
         Title="MovieHUB" Height="450" Width="800" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
     <Window.Background>
@@ -92,3 +92,4 @@
         </Button>
     </Grid>
 </Window>
+
