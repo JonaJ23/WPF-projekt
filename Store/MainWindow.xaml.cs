@@ -98,6 +98,7 @@ namespace Store
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
+
         //  ----- > Kod till search box <---- /Fail kod, hänvisar till inlogg fönster just nu bara. 
         public void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
@@ -119,12 +120,25 @@ namespace Store
             int i = y * MovieGrid.ColumnDefinitions.Count + x;
             State.Pick = State.Movies[i];
 
+            MessageBoxResult option = MessageBox.Show("Do you wanna download this film?", "" + State.Pick.Title + "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (option)
+            {
+                case MessageBoxResult.Yes:
+                    API.RegisterSale(State.User, State.Pick);
+                    MessageBox.Show("All is well and you can watch your movie now.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    break;
+                case MessageBoxResult.No:                   
+                    break;
+            }
 
-
+            /*
             if (API.RegisterSale(State.User, State.Pick))
-                MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+            {
+                MessageBox.Show("All is well and you can watch your movie now.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
             else
-                MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("An error happened while downloading the movie, please try again at a later time.", "Download Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);*/
         }
 
         //Ger åtkomst till användarens konto via huvudmenyn.
