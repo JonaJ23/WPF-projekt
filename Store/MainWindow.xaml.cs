@@ -24,7 +24,7 @@ namespace Store
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();          
 
             State.Movies = API.GetMovieSlice(0, 20);
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
@@ -44,16 +44,20 @@ namespace Store
                             text.Content = movie.Title; // Movies från databas
                             text.FontWeight = FontWeights.UltraBold;
                             text.FontFamily = new FontFamily("Sans-Serif");
+                            text.Foreground = Brushes.White;
                             text.HorizontalAlignment = HorizontalAlignment.Center;
                             text.VerticalAlignment = VerticalAlignment.Top;
+                            text.FontSize = 12;
 
                             // Rating and Genre
                             var genreRating = new Label() { };
-                            genreRating.Content = "(" + movie.Rating + "/10" + ")" + " " + movie.Genre;
+                            genreRating.Content =
+                            genreRating.Content = movie.Genre + " (" + movie.Rating + "/10" + ")";
                             genreRating.HorizontalAlignment = HorizontalAlignment.Center;
                             genreRating.VerticalAlignment = VerticalAlignment.Bottom;
                             genreRating.FontWeight = FontWeights.UltraBold;
-                            genreRating.FontSize = 10;
+                            genreRating.Foreground = Brushes.White;
+                            genreRating.FontSize = 12;
                             genreRating.FontFamily = new FontFamily("Sans-Serif");
 
                             //Björns kod + lite extra
@@ -143,5 +147,6 @@ namespace Store
         {
             SearchMovieBox.Clear();
         }
+
     }
 }
