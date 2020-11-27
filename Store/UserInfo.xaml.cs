@@ -27,68 +27,48 @@ namespace Store
             UserNameTextBlock.Text = State.User.UserName;
             EmailTextBlock.Text = State.User.Email;
 
-
+            
             for (int y = 0; y < CustomerMovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < CustomerMovieGrid.ColumnDefinitions.Count; x++)
                 {
                     int i = y * CustomerMovieGrid.ColumnDefinitions.Count + x;
-                    if (i < State.User.Sales.Count)
+
+                    if (State.User.Sales == null)
                     {
+                        CustomerMovieGrid.ColumnDefinitions.Clear();
+                        CustomerMovieGrid.RowDefinitions.Clear();
+                    }
 
+                    else if (i < State.User.Sales.Count)
+                    {
                         var movie = State.User.Sales[i];
-                        
-                        try
-                        {
 
-                            var text = new Label() { };
-                            text.Content = "Date: " + movie.Date + "\n" + movie.Movie.Title;
-                            text.FontWeight = FontWeights.UltraBold;
-                            text.FontFamily = new FontFamily("Sans-Serif");
-                            text.Foreground = Brushes.White;
-                            text.HorizontalAlignment = HorizontalAlignment.Center;
-                            text.VerticalAlignment = VerticalAlignment.Top;
-                            text.FontSize = 12;
+                        var text = new Label() { };
+                        text.Content = "Date: " + movie.Date + "\n" + movie.Movie.Title;
+                        text.FontWeight = FontWeights.UltraBold;
+                        text.FontFamily = new FontFamily("Sans-Serif");
+                        text.Foreground = Brushes.White;
+                        text.HorizontalAlignment = HorizontalAlignment.Center;
+                        text.VerticalAlignment = VerticalAlignment.Top;
+                        text.FontSize = 12;
 
-                            var image = new Image() { };
-                            image.HorizontalAlignment = HorizontalAlignment.Center;
-                            image.VerticalAlignment = VerticalAlignment.Center;
-                            image.Source = new BitmapImage(new Uri(movie.Movie.ImageURL));
-                            image.Height = 100;
-                            image.Margin = new Thickness(4, 4, 4, 4);
+                        var image = new Image() { };
+                        image.HorizontalAlignment = HorizontalAlignment.Center;
+                        image.VerticalAlignment = VerticalAlignment.Center;
+                        image.Source = new BitmapImage(new Uri(movie.Movie.ImageURL));
+                        image.Height = 100;
+                        image.Margin = new Thickness(4, 4, 4, 4);
 
-                            CustomerMovieGrid.Children.Add(text);
-                            Grid.SetRow(text, y);
-                            Grid.SetColumn(text, x);
-                            CustomerMovieGrid.Children.Add(image);
-                            Grid.SetRow(image, y);
-                            Grid.SetColumn(image, x);
-
-                        }
-                        catch (Exception e) when
-                            (e is ArgumentNullException ||
-                             e is System.IO.FileNotFoundException ||
-                             e is UriFormatException)
-                        {
-                            continue;
-                        }
+                        CustomerMovieGrid.Children.Add(text);
+                        Grid.SetRow(text, y);
+                        Grid.SetColumn(text, x);
+                        CustomerMovieGrid.Children.Add(image);
+                        Grid.SetRow(image, y);
+                        Grid.SetColumn(image, x);
                     }
                 }
             }
-
-
-                /*
-             var text = new Label() { };
-             text.Content
-             CustomerMovieGrid.Children.Add(text);
-             text.Height = 200;
-             text.FontWeight = FontWeights.UltraBold;
-             text.FontFamily = new FontFamily("Sans-Serif");
-             text.HorizontalAlignment = HorizontalAlignment.Center;
-             text.VerticalAlignment = VerticalAlignment.Top;
-             Grid.SetRow(text, y);
-             Grid.SetColumn(text, x);*/
-
          }
             
 

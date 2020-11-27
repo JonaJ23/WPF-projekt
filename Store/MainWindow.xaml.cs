@@ -130,15 +130,6 @@ namespace Store
                 case MessageBoxResult.No:                   
                     break;
             }
-
-            /*
-            if (API.RegisterSale(State.User, State.Pick))
-            {
-                MessageBox.Show("All is well and you can watch your movie now.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-
-            else
-                MessageBox.Show("An error happened while downloading the movie, please try again at a later time.", "Download Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);*/
         }
 
         //Ger åtkomst till användarens konto via huvudmenyn.
