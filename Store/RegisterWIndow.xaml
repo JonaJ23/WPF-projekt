@@ -8,18 +8,18 @@
         Title="Register" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Register" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,38,0,0" FontSize="50" Width="204" FontFamily="Bahnschrift"/>
-        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,135,0,0" Text="First Name:" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,217,0,0" Text="Password:" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,174,0,0" Text="Username:" VerticalAlignment="Top" Width="110" />
-        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,257,0,0" Text="E-mailadress:" VerticalAlignment="Top" Width="110" />
+        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,135,0,0" Text="First Name:" VerticalAlignment="Top" Width="110"  FontFamily="Bahnschrift"/>
+        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,217,0,0" Text="Password:" VerticalAlignment="Top" Width="110" FontFamily="Bahnschrift"/>
+        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,174,0,0" Text="Username:" VerticalAlignment="Top" Width="110" FontFamily="Bahnschrift" />
+        <TextBlock Height="24" HorizontalAlignment="Left" Margin="214,257,0,0" Text="E-mailadress:" VerticalAlignment="Top" Width="110" FontFamily="Bahnschrift" />
         <!--Textboxes-->
         <TextBox  Name="FirstName" Height="24" HorizontalAlignment="Center" Margin="0,135,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="222" />
         <TextBox Name="UserName" Height="24" HorizontalAlignment="Center" Margin="0,175,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="222" />
         <PasswordBox Name="PasswordField" Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="222" Margin="0,217,0,0" />
         <TextBox Name="Email" Height="24" HorizontalAlignment="Center" Margin="0,257,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="222" />
         <!--Buttons-->
-        <Button Click="Submit_Click" Content="Submit" Height="24" HorizontalAlignment="Left" Margin="312,320,0,0" VerticalAlignment="Top" Width="70"/>
-        <Button  Click="Cancel_Click" Content="Cancel" Height="24" HorizontalAlignment="Right" Margin="0,320,316,0"  VerticalAlignment="Top" Width="70"/>
+        <Button Click="Submit_Click" Content="Submit" Height="24" HorizontalAlignment="Left" Margin="318,296,0,0" VerticalAlignment="Top" Width="70" FontFamily="Bahnschrift"/>
+        <Button  Click="Cancel_Click" Content="Cancel" Height="24" HorizontalAlignment="Right" Margin="0,296,322,0"  VerticalAlignment="Top" Width="70" FontFamily="Bahnschrift"/>
 
     </Grid>
 

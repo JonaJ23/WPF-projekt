@@ -9,15 +9,15 @@
     <Grid RenderTransformOrigin="0.494,0.486">
         <!--Labels-->
         <Label Content="MovieHUB" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="50" FontFamily="Bauhaus 93"/>
-        <Label Content="Enter your username and password." HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top"/>
-        <Label Content="Don't have an account?" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0"/>
+        <Label Content="Enter your username and password." HorizontalAlignment="Center" Margin="0,133,0,0" VerticalAlignment="Top"  FontFamily="Bahnschrift"/>
+        <Label Content="Don't have an account?" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,250,0,0" FontFamily="Bahnschrift"/>
         <!--Username-->
         <TextBox Name="NameField" PreviewMouseLeftButtonDown="UserNameClickRemove" HorizontalAlignment="Center" Margin="0,164,0,0" Text="username" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NameField_TextChanged"/>
         <!--Password-->
         <PasswordBox Password="password" Name="PasswordField" PreviewMouseLeftButtonDown="PasswordClickRemove" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0,188,0,0"/>
         <!--Buttons-->
-        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top" Width="56"/>
-        <Button Click ="Register_Click" Content="Register" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="56" Height="20"/>
+        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Margin="0,211,0,0" VerticalAlignment="Top" Width="56" FontFamily="Bahnschrift"/>
+        <Button Click ="Register_Click" Content="Register" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="56" Height="20" FontFamily="Bahnschrift"/>
 
     </Grid>
 </Window>

@@ -49,14 +49,22 @@ namespace Store
 
 
         // clear texten i varje box
-        private void ExistingPasswordBoxClick(object sender, MouseButtonEventArgs e)
+        private void OldPasswordBoxRemove(object sender, MouseButtonEventArgs e)
         {
             OldPasswordBox.Clear();
         }
 
-        private void NewPasswordBoxClick1(object sender, MouseButtonEventArgs e)
+        private void NewPasswordBoxRemove(object sender, MouseButtonEventArgs e)
         {
             NewPasswordBox.Clear();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var MainWindow = new MainWindow();
+            MainWindow.Show();
+            this.Close();
+
         }
     }
 
