@@ -52,7 +52,7 @@ namespace Store
                             // Rating and Genre
                             var genreRating = new Label() { };
                             genreRating.Content =
-                            genreRating.Content = movie.Genre + " (" + movie.Rating + "/10" + ")";
+                            genreRating.Content = movie.Genre + " " + "(" + movie.Rating + "/10" + ")";
                             genreRating.HorizontalAlignment = HorizontalAlignment.Center;
                             genreRating.VerticalAlignment = VerticalAlignment.Bottom;
                             genreRating.FontWeight = FontWeights.UltraBold;
@@ -99,7 +99,7 @@ namespace Store
         }
 
 
-        //  ----- > Kod till search box <---- /Fail kod, hänvisar till inlogg fönster just nu bara. 
+        //  Kod till search box 
         public void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
