@@ -26,52 +26,61 @@ namespace Store
             MainLableName.Content = "Hi, " + State.User.Name;
             UserNameTextBlock.Text = State.User.UserName;
             EmailTextBlock.Text = State.User.Email;
-            int y = 0;
-            int x = 0;
-            var text = new Label() { };
-            text.Content = State.Pick.Title; // Titel från databasen.
-            CustomerMovieGrid.Children.Add(text);
-            text.Height = 200;
-            text.FontWeight = FontWeights.UltraBold;
-            text.FontFamily = new FontFamily("Sans-Serif");
-            text.HorizontalAlignment = HorizontalAlignment.Center;
-            text.VerticalAlignment = VerticalAlignment.Top;
-            Grid.SetRow(text, y);
-            Grid.SetColumn(text, x);
+
+ 
+             int y = 0;
+             int x = 0;
+             var text = new Label() { };
+             text.Content = State.Pick.Title;  //Titel från databasen.
+             CustomerMovieGrid.Children.Add(text);
+             text.Height = 200;
+             text.FontWeight = FontWeights.UltraBold;
+             text.FontFamily = new FontFamily("Sans-Serif");
+             text.HorizontalAlignment = HorizontalAlignment.Center;
+             text.VerticalAlignment = VerticalAlignment.Top;
+             Grid.SetRow(text, y);
+             Grid.SetColumn(text, x);
 
 
+             var image = new Image()
+             {
 
-            var image = new Image()
-            {
+                 HorizontalAlignment = HorizontalAlignment.Center,
+                 VerticalAlignment = VerticalAlignment.Center,
+                 Margin = new Thickness(4, 4, 4, 4),
+             };
 
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                Margin = new Thickness(4, 4, 4, 4),
-            };
+             try
+             {
+                 image.Source = new BitmapImage(new Uri(State.Pick.ImageURL)); // Hämta hem bildlänken till RAM
+                 image.Height = 100;
+             }
+             catch (Exception e) when
+                 (e is ArgumentNullException ||
+                  e is System.IO.FileNotFoundException ||
+                  e is UriFormatException)
+             {
+                 // Om något gick fel så lägger vi in en placeholder 
+                 image.Source = new BitmapImage(new Uri("https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg"));
+             }
 
-            try
-            {
-                image.Source = new BitmapImage(new Uri(State.Pick.ImageURL)); // Hämta hem bildlänken till RAM
-                image.Height = 100;
-            }
-            catch (Exception e) when
-                (e is ArgumentNullException ||
-                 e is System.IO.FileNotFoundException ||
-                 e is UriFormatException)
-            {
-                // Om något gick fel så lägger vi in en placeholder 
-                image.Source = new BitmapImage(new Uri("https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg"));
-            }
+             CustomerMovieGrid.Children.Add(image);
+             Grid.SetRow(image, y);
+             Grid.SetColumn(image, x);
 
-            CustomerMovieGrid.Children.Add(image);
-            Grid.SetRow(image, y);
-            Grid.SetColumn(image, x);
+         }
+            
 
-        }
-
-        private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
+            private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
         {
             var next_window = new MainWindow();
+            next_window.Show();
+            Close();
+        }
+
+        private void NewPassword_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new ChangePasswordWindow();
             next_window.Show();
             Close();
         }
