@@ -23,7 +23,7 @@ namespace Store
             InitializeComponent();
 
             //Tillkallar info från usern genom använda State.User och sedan ta fram det jag vill ha, i detta fall info om kunden i kundens info-sida.
-            MainLableName.Content = "Hi, " + State.User.Name;
+            MainLableName.Content = "Hi, " + State.User.Name + "!";
             UserNameTextBlock.Text = State.User.UserName;
             EmailTextBlock.Text = State.User.Email;
 
@@ -38,6 +38,7 @@ namespace Store
                     {
                         CustomerMovieGrid.ColumnDefinitions.Clear();
                         CustomerMovieGrid.RowDefinitions.Clear();
+                        
                     }
 
                     else if (i < State.User.Sales.Count)

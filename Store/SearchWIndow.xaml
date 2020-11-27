@@ -6,19 +6,15 @@
         xmlns:local="clr-namespace:Store"
         xmlns:DatabaseConnection="clr-namespace:DatabaseConnection;assembly=DatabaseConnection" x:Class="Store.SearchWindow"
         mc:Ignorable="d"
-        Title="MovieHUB" Height="450" Width="800" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
+        Title="MovieHUB" Height="800" Width="1300" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
     <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="0"/>
-            <GradientStop Color="Red" Offset="0.644"/>
-        </LinearGradientBrush>
+        <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
     </Window.Background>
     <Grid Margin="10,144,0,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75*"/>
-            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Welcome to the HUB-zone." HorizontalAlignment="Left" Margin="215,-141,0,0" VerticalAlignment="Top" FontSize="30" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bauhaus 93" Grid.ColumnSpan="2">
+        <Label Content="Welcome to the HUB-zone." HorizontalAlignment="Center" Margin="0,-135,0,0" VerticalAlignment="Top" FontSize="30" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bauhaus 93" Height="54" Width="360">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF878787"/>
@@ -32,7 +28,7 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-135,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" >
+        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-130,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="2,2,2,2" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -40,40 +36,34 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
             <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.87"/>
-                    <GradientStop Color="#FFE2E2E2" Offset="1"/>
-                    <GradientStop Color="#FFEDEDED" Offset="0.867"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faltyapibasket.com%2Fwp-content%2Fuploads%2F2016%2F09%2Fgradient-black-to-white-wallpaper-3.jpg&amp;f=1&amp;nofb=1"/>
             </Button.Background>
         </Button>
-        <ScrollViewer Grid.ColumnSpan="2">
-            <Grid x:Name="MovieGrid" Background="LightSteelBlue" ShowGridLines="True">
+        <ScrollViewer>
+            <Grid x:Name="MovieGrid" ShowGridLines="False">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="117*" />
-                    <ColumnDefinition Width="137*" />
-                    <ColumnDefinition Width="129*" />
-                    <ColumnDefinition Width="142*"/>
+                    <ColumnDefinition Width="130*" />
+                    <ColumnDefinition Width="130*" />
+                    <ColumnDefinition Width="130*" />
+                    <ColumnDefinition Width="130*"/>
                     <ColumnDefinition Width="130*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
+                    <RowDefinition Height="155" />
                 </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
-        <TextBox Name="SearchMovieBox" Width="194" PreviewMouseLeftButtonDown="TextRemove" Height="24" Text="Search for movies" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="282,-29,0,0" Grid.ColumnSpan="2"></TextBox>
-        <Button Content="Log Out" HorizontalAlignment="Left" Margin="334,-136,0,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" Grid.Column="1" >
+        <TextBox Name="SearchMovieBox" Width="194" PreviewMouseLeftButtonDown="TextRemove" Height="24" Text="Search for movies" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-40,0,0"/>
+        <Button Content="Log Out" HorizontalAlignment="Right" Margin="0,-130,10,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="2,2,2,2" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -81,15 +71,10 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
             <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.87"/>
-                    <GradientStop Color="#FFE2E2E2" Offset="1"/>
-                    <GradientStop Color="#FFEDEDED" Offset="0.867"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faltyapibasket.com%2Fwp-content%2Fuploads%2F2016%2F09%2Fgradient-black-to-white-wallpaper-3.jpg&amp;f=1&amp;nofb=1"/>
             </Button.Background>
         </Button>
+        <Border BorderThickness="3" BorderBrush="Silver" Margin="-10,-8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
     </Grid>
 </Window>
 

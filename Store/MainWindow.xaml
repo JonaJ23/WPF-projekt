@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MovieHUB" Height="800" Width="1300" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
     <Window.Background>
-        <ImageBrush ImageSource="https://cdn.wallpapersafari.com/89/49/BfuKHC.png"/>
+        <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
     </Window.Background>
     <Grid Margin="10,144,0,0">
         <Grid.ColumnDefinitions>
@@ -28,7 +28,7 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-130,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" >
+        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-130,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="2,2,2,2" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -41,9 +41,6 @@
         </Button>
         <ScrollViewer>
             <Grid x:Name="MovieGrid" ShowGridLines="False">
-                <Grid.Background>
-                    <ImageBrush TileMode="None" ImageSource="https://wallpapercave.com/wp/X6PjOyY.png"/>
-                </Grid.Background>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="130*" />
                     <ColumnDefinition Width="130*" />
@@ -65,8 +62,8 @@
                 </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
-        <TextBox Name="SearchMovieBox" Width="194" PreviewMouseLeftButtonDown="TextRemove" Height="24" Text="Search for movies" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-30,0,0"/>
-        <Button Content="Log Out" HorizontalAlignment="Right" Margin="0,-130,10,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" >
+        <TextBox Name="SearchMovieBox" Width="194" PreviewMouseLeftButtonDown="TextRemove" Height="24" Text="Search for movies" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-40,0,0" Visibility="Visible" SelectionOpacity="-6"/>
+        <Button Content="Log Out" HorizontalAlignment="Right" Margin="0,-130,10,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="2,2,2,2" ClipToBounds="True" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -77,5 +74,6 @@
                 <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faltyapibasket.com%2Fwp-content%2Fuploads%2F2016%2F09%2Fgradient-black-to-white-wallpaper-3.jpg&amp;f=1&amp;nofb=1"/>
             </Button.Background>
         </Button>
+        <Border BorderThickness="3" BorderBrush="Silver" Margin="-10,-8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
     </Grid>
 </Window>

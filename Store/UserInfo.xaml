@@ -8,10 +8,7 @@
         Title="UserInfo" Height="660" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black"/>
-                <GradientStop Color="Red" Offset="0.644"/>
-            </LinearGradientBrush>
+            <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
         </Grid.Background>
 
         <!--Moviegrid-->
