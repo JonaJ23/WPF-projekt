@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
+
 
 namespace Store
 {
@@ -27,11 +27,59 @@ namespace Store
             UserNameTextBlock.Text = State.User.UserName;
             EmailTextBlock.Text = State.User.Email;
 
- 
-             int y = 0;
-             int x = 0;
+
+            for (int y = 0; y < CustomerMovieGrid.RowDefinitions.Count; y++)
+            {
+                for (int x = 0; x < CustomerMovieGrid.ColumnDefinitions.Count; x++)
+                {
+                    int i = y * CustomerMovieGrid.ColumnDefinitions.Count + x;
+                    if (i < State.User.Sales.Count)
+                    {
+
+                        var movie = State.User.Sales[i];
+                        
+                        try
+                        {
+
+                            var text = new Label() { };
+                            text.Content = "Date: " + movie.Date + "\n" + movie.Movie.Title;
+                            text.FontWeight = FontWeights.UltraBold;
+                            text.FontFamily = new FontFamily("Sans-Serif");
+                            text.Foreground = Brushes.White;
+                            text.HorizontalAlignment = HorizontalAlignment.Center;
+                            text.VerticalAlignment = VerticalAlignment.Top;
+                            text.FontSize = 12;
+
+                            var image = new Image() { };
+                            image.HorizontalAlignment = HorizontalAlignment.Center;
+                            image.VerticalAlignment = VerticalAlignment.Center;
+                            image.Source = new BitmapImage(new Uri(movie.Movie.ImageURL));
+                            image.Height = 100;
+                            image.Margin = new Thickness(4, 4, 4, 4);
+
+                            CustomerMovieGrid.Children.Add(text);
+                            Grid.SetRow(text, y);
+                            Grid.SetColumn(text, x);
+                            CustomerMovieGrid.Children.Add(image);
+                            Grid.SetRow(image, y);
+                            Grid.SetColumn(image, x);
+
+                        }
+                        catch (Exception e) when
+                            (e is ArgumentNullException ||
+                             e is System.IO.FileNotFoundException ||
+                             e is UriFormatException)
+                        {
+                            continue;
+                        }
+                    }
+                }
+            }
+
+
+                /*
              var text = new Label() { };
-             text.Content = State.Pick.Title;  //Titel från databasen.
+             text.Content
              CustomerMovieGrid.Children.Add(text);
              text.Height = 200;
              text.FontWeight = FontWeights.UltraBold;
@@ -39,34 +87,7 @@ namespace Store
              text.HorizontalAlignment = HorizontalAlignment.Center;
              text.VerticalAlignment = VerticalAlignment.Top;
              Grid.SetRow(text, y);
-             Grid.SetColumn(text, x);
-
-
-             var image = new Image()
-             {
-
-                 HorizontalAlignment = HorizontalAlignment.Center,
-                 VerticalAlignment = VerticalAlignment.Center,
-                 Margin = new Thickness(4, 4, 4, 4),
-             };
-
-             try
-             {
-                 image.Source = new BitmapImage(new Uri(State.Pick.ImageURL)); // Hämta hem bildlänken till RAM
-                 image.Height = 100;
-             }
-             catch (Exception e) when
-                 (e is ArgumentNullException ||
-                  e is System.IO.FileNotFoundException ||
-                  e is UriFormatException)
-             {
-                 // Om något gick fel så lägger vi in en placeholder 
-                 image.Source = new BitmapImage(new Uri("https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg"));
-             }
-
-             CustomerMovieGrid.Children.Add(image);
-             Grid.SetRow(image, y);
-             Grid.SetColumn(image, x);
+             Grid.SetColumn(text, x);*/
 
          }
             

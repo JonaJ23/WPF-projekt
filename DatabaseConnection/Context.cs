@@ -13,7 +13,7 @@ namespace DatabaseConnection
         {
             optionsBuilder
                 .LogTo(s => System.Diagnostics.Debug.WriteLine(s))
-                .UseLazyLoadingProxies()
+                //.UseLazyLoadingProxies()
                 .UseSqlServer(
                 @"server=.\SQLExpress;" +
                 @"database=SaleDatabase;" +
