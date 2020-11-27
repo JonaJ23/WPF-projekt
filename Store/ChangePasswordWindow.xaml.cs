@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DatabaseConnection;
+
 
 namespace Store
 {
@@ -22,6 +24,31 @@ namespace Store
             InitializeComponent();
         }
 
+        //Lägger till ny Password
+         private void NewPasswordButton(object sender, RoutedEventArgs e)
+         {
+
+            if (OldPasswordBox.Password == State.User.Password)
+            {
+              
+                State.User.Password = NewPasswordBox.Password;
+                State.ctx.Customers.Update(State.User);
+                State.ctx.SaveChanges();
+                MessageBox.Show("You got a new password!", "New password successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                var UserInfoPage = new UserInfo();
+                UserInfoPage.Show();
+                this.Close();
+
+            }
+         
+            else
+            {
+                MessageBox.Show("You have not put in correct information.", "Wrong Passsword", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+         }
+
+
+        // clear texten i varje box
         private void ExistingPasswordBoxClick(object sender, MouseButtonEventArgs e)
         {
             OldPasswordBox.Clear();
@@ -31,13 +58,6 @@ namespace Store
         {
             NewPasswordBox.Clear();
         }
-
-       /* private void ChangePasswordButton(object sender, RoutedEventArgs e)
-        {
-        /// Ska skriva in kod så de kopplas till SQL databasen samt lösenorden ändras när man klickar på "changepssword"
-        }
-
-        */
     }
 
 }
