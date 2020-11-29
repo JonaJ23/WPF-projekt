@@ -26,7 +26,7 @@ namespace Store
         {
             InitializeComponent();          
 
-            State.Movies = API.GetMovieSlice(0, 20);
+            State.Movies = API.GetMovieSlice(0, 50  );
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)

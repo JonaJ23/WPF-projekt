@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         Title="Register" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
@@ -42,7 +43,7 @@
             </TextBlock.Effect>
         </TextBlock>
         <!--Textboxes-->
-        <TextBox  Name="FirstName" Height="24" HorizontalAlignment="Center" Margin="0,135,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="222" />
+        <TextBox Name="FirstName" Height="24" HorizontalAlignment="Center" Margin="0,135,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="222" />
         <TextBox Name="UserName" Height="24" HorizontalAlignment="Center" Margin="0,175,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="222" />
         <PasswordBox Name="PasswordField" Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="222" Margin="0,215,0,0" />
         <TextBox Name="Email" Height="24" HorizontalAlignment="Center" Margin="0,255,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="222" />
