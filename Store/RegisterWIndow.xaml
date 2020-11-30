@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
-        mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" 
         Title="Register" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
+            <ImageBrush ImageSource="https://lesilets.com/wp-content/uploads/2018/04/1096907-cool-dark-background-2560x1600-for-tablet.jpg"/>
         </Grid.Background>
-        <Label Content="Register" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,38,0,0" FontSize="50" Width="204" FontFamily="Bahnschrift" FontWeight="Bold">
+        <Label Content="Register" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,38,0,0" FontSize="50" Width="204" FontFamily="Bahnschrift" FontWeight="UltraBold">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF878787"/>
@@ -22,34 +22,27 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBlock Height="24" HorizontalAlignment="Center" Margin="-265,135,0,0" Text="First Name:" VerticalAlignment="Top" Width="110"  FontFamily="Bahnschrift" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock Height="24" HorizontalAlignment="Center" Margin="-250,217,0,0" Text="Password:" VerticalAlignment="Top" Width="110" FontFamily="Bahnschrift" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock Height="24" HorizontalAlignment="Center" Margin="-255,174,0,0" Text="Username:" VerticalAlignment="Top" Width="110" FontFamily="Bahnschrift" Foreground="White" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock Height="24" HorizontalAlignment="Left" Margin="202,255,0,0" Text="E-mailadress:" VerticalAlignment="Top" Width="110" FontFamily="Bahnschrift" Foreground="White" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
         <!--Textboxes-->
-        <TextBox Name="FirstName" Height="24" HorizontalAlignment="Center" Margin="0,135,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="222" />
-        <TextBox Name="UserName" Height="24" HorizontalAlignment="Center" Margin="0,175,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="222" />
-        <PasswordBox Name="PasswordField" Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" Width="222" Margin="0,215,0,0" />
-        <TextBox Name="Email" Height="24" HorizontalAlignment="Center" Margin="0,255,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="222" />
+        <TextBox Name="FirstName" TextAlignment="Center" FontWeight="ExtraBold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,110,0,0"
+                 materialDesign:HintAssist.Hint="FIrst name" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                  VerticalAlignment="Top" Width="180"  Height="50" Foreground="FloralWhite" BorderBrush="White" FontSize="15"/>
+
+        <TextBox Name="UserName" TextAlignment="Center" FontWeight="ExtraBold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,-50,0,0" 
+                 materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                 Height="50" Width="180" Foreground="FloralWhite" BorderBrush="White" FontSize="15"/>
+        <!--Password-->
+        <PasswordBox Name="PasswordField" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" Margin="0,215,0,0" 
+                     materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  Foreground="White"
+                     BorderBrush="white" HorizontalContentAlignment="Center" FontWeight="ExtraBold" FontSize="15"/>
+        <!-- E-mail-->
+        <TextBox Name="Email" Height="50" HorizontalAlignment="Center" Margin="0,265,0,0"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"
+                    materialDesign:HintAssist.Hint="E-mailadress" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="FloralWhite" BorderBrush="White"
+                 HorizontalContentAlignment="Center" FontWeight="ExtraBold" FontSize="15"/>
         <!--Buttons-->
-        <Button Click="Submit_Click" Content="Submit" Height="24" HorizontalAlignment="Center" Margin="0,290,90,0" VerticalAlignment="Top" Width="60" FontFamily="Bahnschrift"/>
-        <Button  Click="Cancel_Click" Content="Cancel" Height="24" HorizontalAlignment="Center" Margin="0,290,-90,0"  VerticalAlignment="Top" Width="60" FontFamily="Bahnschrift"/>
+        <Button Click="Submit_Click" Content="Submit" Height="28" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRasiedLight}"
+                Margin="0,335,100,0" VerticalAlignment="Top" Width="90" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="20" Background="White"/>
+        <Button  Click="Cancel_Click" Content="Cancel" Height="28" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRasiedLight}"
+                 Margin="0,335,-100,0"  VerticalAlignment="Top" Width="90" FontFamily="Bahnschrift" FontWeight="DemiBold" FontSize="20" Background="White"/>
 
     </Grid>
 
