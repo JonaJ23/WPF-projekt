@@ -8,14 +8,15 @@
         xmlns:DatabaseConnection="clr-namespace:DatabaseConnection;assembly=DatabaseConnection" x:Class="Store.MainWindow"
         mc:Ignorable="d"
         Title="MovieHUB" Height="800" Width="1300" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
-    <Window.Background>
-        <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
+    <Window.Background >
+        <ImageBrush ImageSource="https://lesilets.com/wp-content/uploads/2018/04/1096907-cool-dark-background-2560x1600-for-tablet.jpg" />
     </Window.Background>
     <Grid Margin="10,144,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Welcome to the MovieHUB-zone" HorizontalAlignment="Center" Margin="0,-135,0,0" VerticalAlignment="Top" FontSize="30" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bauhaus 93" Height="54" Width="434">
+        <Label Content="MovieHUB" HorizontalAlignment="Center" Margin="0,-140,0,0"  HorizontalContentAlignment="Center"
+               VerticalAlignment="Top" FontSize="50" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bahnschrift" FontWeight="UltraBold" Height="60" Width="434">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF878787"/>
@@ -31,7 +32,7 @@
         </Label>
         <!-- Account Button -->
         <Button Content="Account" HorizontalAlignment="center" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="-1100,-125,0,0" VerticalAlignment="Top"
-                FontSize="20" Click="Account_Click" Width="127" Height="49" FontFamily="Bahnschrift" Foreground="Black"
+                FontSize="20" Click="Account_Click" Width="120" Height="40" FontFamily="Bahnschrift" Foreground="Black"
                 FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5">
         </Button>
         <ScrollViewer>
@@ -58,10 +59,10 @@
             </Grid>
         </ScrollViewer>
         <!-- SearchBox -->
-        <TextBox Name="SearchMovieBox" Width="434"  PreviewMouseLeftButtonDown="TextRemove"  HorizontalContentAlignment="Center"
+        <TextBox Name="SearchMovieBox" Width="360" Height="44"  PreviewMouseLeftButtonDown="TextRemove"  HorizontalContentAlignment="Center"
                  materialDesign:HintAssist.Hint="Search for movies" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" 
-                 BorderBrush="White" FontStyle="Normal" Foreground="white"  FontSize="24" HorizontalAlignment="center" VerticalAlignment="Top" 
-                 Margin="0,-70,0,0" Visibility="Visible" SelectionOpacity="-6" RenderTransformOrigin="0.5,0.5" FontFamily="Bahnschrift">
+                 FontStyle="Normal" Foreground="black" Background="white" FontSize="18" HorizontalAlignment="center" VerticalAlignment="Top" 
+                 Margin="0,-60,0,0" Visibility="Visible" SelectionOpacity="-6" RenderTransformOrigin="0.5,0.5"  FontFamily="Bahnschrift">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -73,7 +74,7 @@
         </TextBox>
         <!-- LogOut Button -->
         <Button Content="Log Out" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="1100,-125,0,0" 
-                VerticalAlignment="Top" FontSize="20" Click="LogOut_Click" Width="127" Height="49" FontFamily="Bahnschrift" Visibility="Visible"
+                VerticalAlignment="Top" FontSize="20" Click="LogOut_Click" Width="110" Height="40" FontFamily="Bahnschrift" Visibility="Visible"
                 Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" 
                 Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5" ClipToBounds="True"  >
         </Button>

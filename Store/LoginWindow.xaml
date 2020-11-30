@@ -9,10 +9,11 @@
         Title="LoginWindow" Height="480" Width="900" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid RenderTransformOrigin="0.494,0.486">
         <Grid.Background>
-            <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
+
+            <ImageBrush ImageSource="https://lesilets.com/wp-content/uploads/2018/04/1096907-cool-dark-background-2560x1600-for-tablet.jpg"/>
         </Grid.Background>
         <!--Labels-->
-        <Label Content="MovieHUB" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="90" FontFamily="Bauhaus 93">
+        <Label Content="MovieHUB" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0" FontSize="90" FontFamily="Bahnschrift" FontWeight="UltraBold">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
@@ -23,13 +24,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="Enter your username and password." HorizontalAlignment="Center" Margin="3,140,0,0" VerticalAlignment="Top" 
-               FontSize="22" FontFamily="Bahnschrift" Foreground="White" RenderTransformOrigin="0.498,-0.216">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
-        <Label Content="Don't have an account?" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,320,0,0" 
+        <Label Content="New to MovieHUB?" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="45,320,0,0" 
                FontFamily="Bahnschrift" FontSize="22" Foreground="White" Width="239">
             <Label.Effect>
                 <DropShadowEffect/>
@@ -39,18 +34,18 @@
         <TextBox Name="NameField" TextAlignment="center"  HorizontalContentAlignment="Center" PreviewMouseLeftButtonDown="UserNameClickRemove" 
                  materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" BorderBrush="white" 
                  FontSize="15" FontWeight="ExtraBold" Foreground="FloralWhite" HorizontalAlignment="center" VerticalAlignment="Top" Width="170" 
-                 TextChanged="NameField_TextChanged" Height="46" Margin="3,175,0,0"/>
+                 TextChanged="NameField_TextChanged" Height="46" Margin="3,160,0,0"/>
         <!--Password-->
         <PasswordBox Password="" HorizontalContentAlignment="Center" BorderBrush="white" Name="PasswordField"
                      materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
-                     Foreground="White" PreviewMouseLeftButtonDown="PasswordClickRemove" FontSize="12" FontWeight="ExtraBold" 
-                     HorizontalAlignment="center" VerticalAlignment="Top" Width="170" Margin="3,226,0,0" Height="46"/>
+                     Foreground="White" PreviewMouseLeftButtonDown="PasswordClickRemove" FontSize="15" FontWeight="ExtraBold" 
+                     HorizontalAlignment="center" VerticalAlignment="Top" Width="170" Margin="3,200,0,0" Height="46"/>
         <!--Buttons-->
-        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="center" Style="{DynamicResource MaterialDesignRasiedLight}" 
-                Margin="3,281,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Background="white"
+        <Button Click="LogIn_Click" Content="Log in" HorizontalAlignment="center" Style="{DynamicResource MaterialDesignRasiedLight}" 
+                Margin="3,261,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Background="white"
                 BorderThickness="0.5 0.5 0.5 0.5" FontSize="20"/>
-        <Button Click ="Register_Click" Content="Register" Style="{DynamicResource MaterialDesignRasiedLight}" 
-                HorizontalAlignment="center" Margin="3,365,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Background="white"
+        <Button Click ="Register_Click" Content="Sign up" Style="{DynamicResource MaterialDesignRasiedLight}" 
+                HorizontalAlignment="center" Margin="3,355,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Background="DarkRed"
                 BorderThickness="0.5 0.5 0.5 0.5" FontSize="20"/>
 
     </Grid>
