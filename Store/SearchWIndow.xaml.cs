@@ -108,6 +108,11 @@ namespace Store
                 var next_Searchwindow = new SearchWindow();
                 next_Searchwindow.Show();
                 Close();
+
+                if (State.Movies.Count == 0)
+                {
+                    MessageBox.Show("No movie(s) were found.", "Search failed", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)

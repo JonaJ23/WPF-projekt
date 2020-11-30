@@ -24,7 +24,7 @@ namespace Store
 
         public MainWindow()
         {
-            InitializeComponent();          
+            InitializeComponent();           
 
             State.Movies = API.GetMovieSlice(0, 50  );
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
@@ -98,7 +98,6 @@ namespace Store
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
-
         //  Kod till search box 
         public void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
@@ -109,6 +108,11 @@ namespace Store
                 var next_Searchwindow = new SearchWindow();
                 next_Searchwindow.Show();
                 Close();
+
+                if (State.Movies.Count == 0)
+                {
+                    MessageBox.Show("No movie(s) were found.", "Search failed", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
