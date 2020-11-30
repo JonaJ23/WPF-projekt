@@ -15,8 +15,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="MovieHUB" HorizontalAlignment="Center" Margin="0,-140,0,0"  HorizontalContentAlignment="Center"
-               VerticalAlignment="Top" FontSize="50" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bahnschrift" FontWeight="UltraBold" Height="60" Width="434">
+        <Label Content="MovieHUB" HorizontalAlignment="Center" Margin="0,-130,0,0"  HorizontalContentAlignment="Center"
+               VerticalAlignment="Top" FontSize="50" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bahnschrift" FontWeight="UltraBold" Height="70" Width="434">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF878787"/>

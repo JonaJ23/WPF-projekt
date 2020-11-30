@@ -9,13 +9,14 @@
         mc:Ignorable="d"
         Title="MovieHUB" Height="800" Width="1300" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
     <Window.Background>
-        <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.wallpapersafari.com%2F87%2F95%2FskFjV0.jpg&amp;f=1&amp;nofb=1"/>
+        <ImageBrush ImageSource="https://lesilets.com/wp-content/uploads/2018/04/1096907-cool-dark-background-2560x1600-for-tablet.jpg"/>
     </Window.Background>
     <Grid Margin="10,144,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Welcome to the HUB-zone." HorizontalAlignment="Center" Margin="0,-135,0,0" VerticalAlignment="Top" FontSize="30" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bauhaus 93" Height="54" Width="360">
+        <Label Content="MovieHUB" HorizontalAlignment="Center" Margin="0,-130,0,0"  HorizontalContentAlignment="Center"
+               VerticalAlignment="Top" FontSize="50" FlowDirection="LeftToRight" FontStretch="Medium" FontFamily="Bahnschrift" FontWeight="UltraBold" Height="70" Width="434">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF878787"/>
@@ -29,16 +30,10 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Button Content="Account" HorizontalAlignment="Left" Margin="0,-130,0,0" VerticalAlignment="Top" FontSize="15" Click="Account_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="2,2,2,2" >
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-            <Button.Background>
-                <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faltyapibasket.com%2Fwp-content%2Fuploads%2F2016%2F09%2Fgradient-black-to-white-wallpaper-3.jpg&amp;f=1&amp;nofb=1"/>
-            </Button.Background>
+        <!-- Account Button -->
+        <Button Content="Account" HorizontalAlignment="center" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="-1100,-125,0,0" VerticalAlignment="Top"
+                FontSize="20" Click="Account_Click" Width="120" Height="40" FontFamily="Bahnschrift" Foreground="Black"
+                FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5">
         </Button>
         <ScrollViewer>
             <Grid x:Name="MovieGrid" ShowGridLines="False">
@@ -63,17 +58,15 @@
                 </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
-        <TextBox Name="SearchMovieBox" Width="194" PreviewMouseLeftButtonDown="TextRemove" Height="24" Text="Search for movies" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-40,0,0"/>
-        <Button Content="Log Out" HorizontalAlignment="Right" Margin="0,-130,10,0" VerticalAlignment="Top" FontSize="15" Click="LogOut_Click" Width="70" Height="44" FontFamily="Bauhaus 93" Visibility="Visible" Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="2,2,2,2" >
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-            <Button.Background>
-                <ImageBrush ImageSource="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faltyapibasket.com%2Fwp-content%2Fuploads%2F2016%2F09%2Fgradient-black-to-white-wallpaper-3.jpg&amp;f=1&amp;nofb=1"/>
-            </Button.Background>
+        <TextBox Name="SearchMovieBox" Width="360" Height="44"  PreviewMouseLeftButtonDown="TextRemove"  HorizontalContentAlignment="Center"
+                 materialDesign:HintAssist.Hint="Search for movies" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" 
+                 FontStyle="Normal" Foreground="black" Background="white" FontSize="18" HorizontalAlignment="center" VerticalAlignment="Top" 
+                 Margin="0,-60,0,0" Visibility="Visible" SelectionOpacity="-6" RenderTransformOrigin="0.5,0.5"  FontFamily="Bahnschrift"/>
+        <!-- LogOut Button -->
+        <Button Content="Log Out" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="1100,-125,0,0" 
+                VerticalAlignment="Top" FontSize="20" Click="LogOut_Click" Width="110" Height="40" FontFamily="Bahnschrift" Visibility="Visible"
+                Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" 
+                Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5" ClipToBounds="True"  >
         </Button>
         <Border BorderThickness="3" BorderBrush="Silver" Margin="-10,-8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
     </Grid>

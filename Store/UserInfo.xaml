@@ -29,7 +29,7 @@
         </Grid>
         <Button Content="Main menu" Height="46" HorizontalAlignment="center"  Style="{DynamicResource MaterialDesignRasiedLight}"
                 VerticalAlignment="Top"  Click="MainMenu_Click" Width="120" Foreground="Black" 
-                FontWeight="Normal"  Cursor="Hand" Margin="-700,35,0,0" FontFamily="Bahnschrift" Background="white"
+                FontWeight="Normal"  Cursor="Hand" Margin="-700,35,0,0" FontFamily="Bahnschrift" Background="White"
                 BorderThickness="0.5 0.5 0.5 0.5" FontSize="20">
         </Button>
         <Button Content="New Password"  Height="46" HorizontalAlignment="center"  Style="{DynamicResource MaterialDesignRasiedLight}" Margin="650,35,0,0" 
