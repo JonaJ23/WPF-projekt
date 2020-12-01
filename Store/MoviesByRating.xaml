@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Store"
-        xmlns:DatabaseConnection="clr-namespace:DatabaseConnection;assembly=DatabaseConnection" x:Class="Store.MainWindow"
+        xmlns:DatabaseConnection="clr-namespace:DatabaseConnection;assembly=DatabaseConnection" x:Class="Store.MoviesByRating"
         mc:Ignorable="d"
         Title="MovieHUB" Height="800" Width="1300" WindowStartupLocation="CenterScreen" Cursor="Arrow" AutomationProperties.IsOffscreenBehavior="Default">
     <Window.Background >
@@ -77,11 +77,8 @@
                 VerticalAlignment="Top" FontSize="20" Click="LogOut_Click" Width="110" Height="40" FontFamily="Bahnschrift" Visibility="Visible"
                 Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" 
                 Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5" ClipToBounds="True"  >
-
         </Button>
-        <Button Content="Movies by Rating" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="287,-57,0,0" VerticalAlignment="Top"
-            FontSize="14" Click="MoviesByRating_Click" Width="130" Height="30" FontFamily="Bahnschrift" Foreground="Black"
-            FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5"/>
         <Border BorderThickness="3" BorderBrush="Silver" Margin="-10,-8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+    
     </Grid>
 </Window>

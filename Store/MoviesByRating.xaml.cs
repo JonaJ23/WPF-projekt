@@ -19,14 +19,14 @@ namespace Store
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MoviesByRating : Window
     {
 
-        public MainWindow()
+        public MoviesByRating()
         {
-            InitializeComponent();           
+            InitializeComponent();
 
-            State.Movies = API.GetMovieSlice(0, 50 );
+            State.Movies = API.GetMovieByRating(0, 50);
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -131,7 +131,7 @@ namespace Store
                     API.RegisterSale(State.User, State.Pick);
                     MessageBox.Show("The movie is now on your Account-page.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
                     break;
-                case MessageBoxResult.No:                   
+                case MessageBoxResult.No:
                     break;
             }
         }
@@ -148,12 +148,6 @@ namespace Store
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();
-            next_window.Show();
-            Close();
-        }
-        private void MoviesByRating_Click(object sender, RoutedEventArgs e)
-        {
-            var next_window = new MoviesByRating();
             next_window.Show();
             Close();
         }

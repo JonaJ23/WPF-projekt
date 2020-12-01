@@ -22,13 +22,12 @@ namespace DatabaseConnection
 
         */
 
-        /*  --- Plockar ut rating -- 
         public static List<Movie> GetMovieByRating(int a, int b)
         {
             using var ctx = new Context();
             return ctx.Movies.OrderByDescending(r => r.Rating).Skip(a).Take(b).ToList();
         }
-        */
+        
 
         public static List<Movie> GetMovieByName(string title)
         {     
@@ -39,7 +38,7 @@ namespace DatabaseConnection
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
         public static Customer GetCustomerByName(string name)
-        {           
+        {          
             return ctx.Customers.Include(c => c.Sales).FirstOrDefault(c => c.UserName.ToLower() == name.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
