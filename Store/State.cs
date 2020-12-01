@@ -9,7 +9,7 @@ namespace Store
     // Håller koll på den data som programmet måste komma ihåg mellan vyer/fönster förändringar
     static class State
     {
-
+        public static Rental rental { get; set; } 
         public static Customer User { get; set; }
         public static List<Movie> Movies { get; set; }
         public static Movie Pick { get; set; }

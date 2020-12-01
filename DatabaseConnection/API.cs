@@ -29,6 +29,7 @@ namespace DatabaseConnection
             return ctx.Movies.OrderByDescending(r => r.Rating).Skip(a).Take(b).ToList();
         }
         */
+
         public static List<Movie> GetMovieByName(string title)
         {     
             return ctx.Movies.AsEnumerable().Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
@@ -38,8 +39,8 @@ namespace DatabaseConnection
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
         public static Customer GetCustomerByName(string name)
-        {
-            return ctx.Customers.FirstOrDefault(c => c.UserName.ToLower() == name.ToLower());
+        {           
+            return ctx.Customers.Include(c => c.Sales).FirstOrDefault(c => c.UserName.ToLower() == name.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
         {
