@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using DatabaseConnection;
 
 
 
@@ -43,10 +44,10 @@ namespace Store
                     else if (i < State.User.Sales.Count)
                     {
                         
-                        var movie = State.User.Sales[i];
+                        Rental rental = State.User.Sales[i];
 
                         var text = new Label() { };
-                        text.Content = "Date: " + movie.Date + "\n" + movie.Movie.Title;
+                        text.Content = "Date: " + rental.Date + "\n" + rental.Movie.Title;
                         text.FontWeight = FontWeights.UltraBold;
                         text.FontFamily = new FontFamily("Sans-Serif");
                         text.Foreground = Brushes.White;
@@ -57,7 +58,7 @@ namespace Store
                         var image = new Image() { };
                         image.HorizontalAlignment = HorizontalAlignment.Center;
                         image.VerticalAlignment = VerticalAlignment.Center;
-                        image.Source = new BitmapImage(new Uri(movie.Movie.ImageURL));
+                        image.Source = new BitmapImage(new Uri(rental.Movie.ImageURL));
                         image.Height = 100;
                         image.Margin = new Thickness(4, 4, 4, 4);
 
