@@ -26,7 +26,7 @@ namespace Store
         {
             InitializeComponent();           
 
-            State.Movies = API.GetMovieSlice(0, 50  );
+            State.Movies = API.GetMovieSlice(0, 50 );
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -129,7 +129,7 @@ namespace Store
             {
                 case MessageBoxResult.Yes:
                     API.RegisterSale(State.User, State.Pick);
-                    MessageBox.Show("All is well and you can watch your movie now.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("The movie is now on your Account-page.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
                     break;
                 case MessageBoxResult.No:                   
                     break;

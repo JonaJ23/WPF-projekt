@@ -8,27 +8,41 @@ namespace DatabaseConnection
 {
     public class API
     {
+        public static Context ctx = new Context();
 
-
-       
-        public static List<Movie> GetMovieByName(string title)
+        /* Tänker mig något sådant för att plocka ut genres sen.
+         * 
+        public static List<Movie> GetMovieGenre(string Genre)
         {
             using var ctx = new Context();
+           
+            ctx.Add(new SingleGenre() {Genre.split("|")};
+            return ctx.SaveChanges() == 1;
+        }
+
+        */
+
+        /*  --- Plockar ut rating -- 
+        public static List<Movie> GetMovieByRating(int a, int b)
+        {
+            using var ctx = new Context();
+            return ctx.Movies.OrderByDescending(r => r.Rating).Skip(a).Take(b).ToList();
+        }
+        */
+        public static List<Movie> GetMovieByName(string title)
+        {     
             return ctx.Movies.AsEnumerable().Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
         }
         public static List<Movie> GetMovieSlice(int a, int b)
         {
-            using var ctx = new Context();
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
         public static Customer GetCustomerByName(string name)
         {
-            using var ctx = new Context();
             return ctx.Customers.FirstOrDefault(c => c.UserName.ToLower() == name.ToLower());
         }
         public static bool RegisterSale(Customer customer, Movie movie)
         {
-            using var ctx = new Context();
             try
             {
                 // Här säger jag åt contextet att inte oroa sig över innehållet i dessa records.

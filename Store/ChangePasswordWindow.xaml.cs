@@ -34,8 +34,8 @@ namespace Store
             {
               
                 State.User.Password = NewPasswordBox.Password;
-                State.ctx.Customers.Update(State.User);
-                State.ctx.SaveChanges();
+                API.ctx.Customers.Update(State.User);
+                API.ctx.SaveChanges();
                 MessageBox.Show("You got a new password!", "New password successful", MessageBoxButton.OK, MessageBoxImage.Information);
                 var UserInfoPage = new UserInfo();
                 UserInfoPage.Show();

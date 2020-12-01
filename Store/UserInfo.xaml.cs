@@ -26,8 +26,7 @@ namespace Store
             MainLableName.Content = "Hi, " + State.User.Name + "!";
             UserNameTextBlock.Text = State.User.UserName;
             EmailTextBlock.Text = State.User.Email;
-
-            
+                
             for (int y = 0; y < CustomerMovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < CustomerMovieGrid.ColumnDefinitions.Count; x++)
@@ -43,6 +42,7 @@ namespace Store
 
                     else if (i < State.User.Sales.Count)
                     {
+                        
                         var movie = State.User.Sales[i];
 
                         var text = new Label() { };
@@ -67,6 +67,8 @@ namespace Store
                         CustomerMovieGrid.Children.Add(image);
                         Grid.SetRow(image, y);
                         Grid.SetColumn(image, x);
+                      
+
                     }
                 }
             }
