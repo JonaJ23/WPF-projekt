@@ -45,7 +45,7 @@
                 Margin="3,261,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Background="white"
                 BorderThickness="0.5 0.5 0.5 0.5" FontSize="20"/>
         <Button Click ="Register_Click" Content="Sign up" Style="{DynamicResource MaterialDesignRasiedLight}" 
-                HorizontalAlignment="center" Margin="3,355,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Background="DarkRed"
+                HorizontalAlignment="center" Margin="3,355,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Bahnschrift" Foreground="white" Background="DarkRed"
                 BorderThickness="0.5 0.5 0.5 0.5" FontSize="20"/>
 
     </Grid>
