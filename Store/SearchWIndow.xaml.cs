@@ -136,7 +136,7 @@ namespace Store
                 case MessageBoxResult.No:
                     break;
             }
-        }. 
+        }
 
 
         //Ger åtkomst till användarens konto via huvudmenyn.
