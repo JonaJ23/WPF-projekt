@@ -152,10 +152,18 @@ namespace Store
             Close();
         }
 
+        private void MainPage_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new MainWindow();
+            next_window.Show();
+            Close();
+        }
+
         private void TextRemove(object sender, MouseButtonEventArgs e)
         {
             SearchMovieBox.Clear();
         }
+
 
     }
 }

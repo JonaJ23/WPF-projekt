@@ -24,11 +24,10 @@ namespace DatabaseConnection
 
         public static List<Movie> GetMovieByRating(int a, int b)
         {
-            using var ctx = new Context();
+        
             return ctx.Movies.OrderByDescending(r => r.Rating).Skip(a).Take(b).ToList();
         }
         
-
         public static List<Movie> GetMovieByName(string title)
         {     
             return ctx.Movies.AsEnumerable().Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
