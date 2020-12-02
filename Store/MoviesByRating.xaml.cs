@@ -98,13 +98,14 @@ namespace Store
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
-        //  Kod till search box 
+        //Gör att användaren kan söka efter genrer/titlar i searchboxen.
         public void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 State.Movies.Clear();
                 State.Movies.AddRange(API.GetMovieByName(SearchMovieBox.Text));
+                State.Movies.AddRange(API.GetMovieByGenre(SearchMovieBox.Text));
                 var next_Searchwindow = new SearchWindow();
                 next_Searchwindow.Show();
                 Close();
@@ -152,6 +153,7 @@ namespace Store
             Close();
         }
 
+        //Går tillbaka till huvudmenyn.
         private void MainPage_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new MainWindow();

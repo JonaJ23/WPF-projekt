@@ -11,6 +11,7 @@
     <Window.Background >
         <ImageBrush ImageSource="https://lesilets.com/wp-content/uploads/2018/04/1096907-cool-dark-background-2560x1600-for-tablet.jpg" />
     </Window.Background>
+    
     <Grid Margin="10,144,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -30,10 +31,13 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
+        
         <!-- Account Button -->
         <Button Content="Account" HorizontalAlignment="center" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="-1100,-125,0,0" VerticalAlignment="Top"
                 FontSize="20" Click="Account_Click" Width="120" Height="40" FontFamily="Bahnschrift" Foreground="Black"
                 FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5">
+        <!-- Account Button -->
+            
         </Button>
         <ScrollViewer>
             <Grid x:Name="MovieGrid" ShowGridLines="False">
@@ -58,6 +62,7 @@
                 </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
+        
         <!-- SearchBox -->
         <TextBox Name="SearchMovieBox" Width="360" Height="44"  PreviewMouseLeftButtonDown="TextRemove"  HorizontalContentAlignment="Center"
                  materialDesign:HintAssist.Hint="Search for movies" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" 
@@ -72,16 +77,22 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
+        <!-- SearchBox -->
+        
         <!-- LogOut Button -->
         <Button Content="Log Out" HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="1100,-125,0,0" 
                 VerticalAlignment="Top" FontSize="20" Click="LogOut_Click" Width="110" Height="40" FontFamily="Bahnschrift" Visibility="Visible"
                 Foreground="Black" FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" 
                 Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5" ClipToBounds="True"  >
         </Button>
+        <!-- LogOut Button -->
+
+        <!-- MainPage Button -->
         <Button Content="MainPage" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignRasiedLight}" Margin="287,-57,0,0" VerticalAlignment="Top"
             FontSize="14" Click="MainPage_Click" Width="130" Height="30" FontFamily="Bahnschrift" Foreground="Black"
             FontStretch="Normal" FlowDirection="LeftToRight" HorizontalContentAlignment="Center" Cursor="Hand" BorderThickness="0.5 0.5 0.5 0.5"/>
         <Border BorderThickness="3" BorderBrush="Silver" Margin="-10,-8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-    
+        <!-- MainPage Button -->
+        
     </Grid>
 </Window>

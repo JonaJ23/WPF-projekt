@@ -10,17 +10,11 @@ namespace DatabaseConnection
     {
         public static Context ctx = new Context();
 
-        /* Tänker mig något sådant för att plocka ut genres sen.
-         * 
-        public static List<Movie> GetMovieGenre(string Genre)
+        //Hämtar genre från databasen.
+        public static List<Movie> GetMovieByGenre(string genre)
         {
-            using var ctx = new Context();
-           
-            ctx.Add(new SingleGenre() {Genre.split("|")};
-            return ctx.SaveChanges() == 1;
+            return ctx.Movies.AsEnumerable().Where(m => m.Genre.Contains(genre, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-
-        */
 
         public static List<Movie> GetMovieByRating(int a, int b)
         {
@@ -32,10 +26,12 @@ namespace DatabaseConnection
         {     
             return ctx.Movies.AsEnumerable().Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
         }
+
         public static List<Movie> GetMovieSlice(int a, int b)
         {
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
+
         public static Customer GetCustomerByName(string name)
         {          
             return ctx.Customers.Include(c => c.Sales).FirstOrDefault(c => c.UserName.ToLower() == name.ToLower());

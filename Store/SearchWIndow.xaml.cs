@@ -99,12 +99,14 @@ namespace Store
             this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
+        //Gör att användaren kan söka efter genrer/titlar i searchboxen.
         public void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 State.Movies.Clear();
                 State.Movies.AddRange(API.GetMovieByName(SearchMovieBox.Text));
+                State.Movies.AddRange(API.GetMovieByGenre(SearchMovieBox.Text));
                 var next_Searchwindow = new SearchWindow();
                 next_Searchwindow.Show();
                 Close();
@@ -124,16 +126,17 @@ namespace Store
             int i = y * MovieGrid.ColumnDefinitions.Count + x;
             State.Pick = State.Movies[i];
 
-
-
-            if (API.RegisterSale(State.User, State.Pick))
-                MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
-            else
-                MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-        }
-
-        //  ----- > Kod till search box <---- /Fail kod, hänvisar till inlogg fönster just nu bara. 
-
+            MessageBoxResult option = MessageBox.Show("Do you wanna download this film?", "" + State.Pick.Title + "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (option)
+            {
+                case MessageBoxResult.Yes:
+                    API.RegisterSale(State.User, State.Pick);
+                    MessageBox.Show("The movie is now on your Account-page.", "Download Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
+        }. 
 
 
         //Ger åtkomst till användarens konto via huvudmenyn.
@@ -148,6 +151,14 @@ namespace Store
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
             var next_window = new LoginWindow();
+            next_window.Show();
+            Close();
+        }
+        
+        //Går tillbaka till huvudmenyn.
+        private void MainPage_Click(object sender, RoutedEventArgs e)
+        {
+            var next_window = new MainWindow();
             next_window.Show();
             Close();
         }
