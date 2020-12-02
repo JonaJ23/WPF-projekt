@@ -29,25 +29,29 @@ namespace Store
         //Lägger till ny Password
          private void NewPasswordButton(object sender, RoutedEventArgs e)
          {
+            if (NewPasswordBox.Password.Length == 0)
+            {
+                MessageBox.Show("You have not put in all information.", "Missing input", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else if (OldPasswordBox.Password != State.User.Password)
+            {
+                MessageBox.Show("Wrong Password, please type in the correct Password.", "Wrong Password", MessageBoxButton.OK, MessageBoxImage.Information);    
+            }
+            else if (State.User.Password == NewPasswordBox.Password)
+                MessageBox.Show("You're already using this Password, please type in a new one.", "Old Password", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            if (OldPasswordBox.Password == State.User.Password)
+            else if (OldPasswordBox.Password == State.User.Password)
             {
               
                 State.User.Password = NewPasswordBox.Password;
                 API.ctx.Customers.Update(State.User);
                 API.ctx.SaveChanges();
-                MessageBox.Show("You got a new password!", "New password successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("You got a new Password!", "New Password successful", MessageBoxButton.OK, MessageBoxImage.Information);
                 var UserInfoPage = new UserInfo();
                 UserInfoPage.Show();
                 this.Close();
-
             }
-         
-            else
-            {
-                MessageBox.Show("You have not put in correct information.", "Wrong Passsword", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-         }
+        }
 
 
         // clear texten i varje box
