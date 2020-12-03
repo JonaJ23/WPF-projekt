@@ -65,22 +65,9 @@
         
         <!-- SearchBox -->
         <TextBox Name="SearchMovieBox" Width="360" Height="44"  PreviewMouseLeftButtonDown="TextRemove"  HorizontalContentAlignment="Center"
-                 materialDesign:HintAssist.Hint="Search for movies or genres" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" 
-                 FontStyle="Normal" Foreground="white"  FontSize="18" HorizontalAlignment="center" VerticalAlignment="Top" 
+                 materialDesign:HintAssist.Hint="Search for movies" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" 
+                 FontStyle="Normal" Foreground="black" Background="white" FontSize="18" HorizontalAlignment="center" VerticalAlignment="Top" 
                  Margin="0,-60,0,0" Visibility="Visible" SelectionOpacity="-6" RenderTransformOrigin="0.5,0.5"  FontFamily="Bahnschrift">
-            <TextBox.Background>
-                <ImageBrush ImageSource="https://assets.stickpng.com/images/585e4adacb11b227491c3392.png" Stretch="Uniform" AlignmentX="Right">
-                    <ImageBrush.Transform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform X="-3"/>
-                        </TransformGroup>
-                    </ImageBrush.Transform>
-                </ImageBrush>
-            </TextBox.Background>
-
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
