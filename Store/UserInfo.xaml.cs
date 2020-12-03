@@ -37,8 +37,7 @@ namespace Store
                     if (State.User.Sales == null)
                     {
                         CustomerMovieGrid.ColumnDefinitions.Clear();
-                        CustomerMovieGrid.RowDefinitions.Clear();
-                        
+                        CustomerMovieGrid.RowDefinitions.Clear();                       
                     }
 
                     else if (i < State.User.Sales.Count)
@@ -74,8 +73,6 @@ namespace Store
                 }
             }
          }
-            
-
             private void MainMenu_Click(object sender, RoutedEventArgs e) //Gör att användaren kan klicka tillbaka till huvudmenyn från användarmenyn.
         {
             var next_window = new MainWindow();

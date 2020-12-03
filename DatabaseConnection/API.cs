@@ -15,18 +15,17 @@ namespace DatabaseConnection
         {
             return ctx.Movies.AsEnumerable().Where(m => m.Genre.Contains(genre, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-
+       //Hämtar Rating
         public static List<Movie> GetMovieByRating(int a, int b)
         {
         
             return ctx.Movies.OrderByDescending(r => r.Rating).Skip(a).Take(b).ToList();
         }
-        
+        //Hämtar titel
         public static List<Movie> GetMovieByName(string title)
         {     
             return ctx.Movies.AsEnumerable().Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-
         public static List<Movie> GetMovieSlice(int a, int b)
         {
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
